@@ -7,17 +7,20 @@ import { FormsModule } from '@angular/forms';
 import { TabelaClientesComponent } from './tabela-clientes/tabela-clientes.component';
 import { FormClientesComponent } from './form-clientes/form-clientes.component';
 import { CrudClientesService} from './crud-clientes.service';
+import { TelaAdminComponent } from './tela-admin/tela-admin.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'tela-funcionario', pathMatch: 'full'},
+  { path: '', redirectTo: '', pathMatch: 'full'},
+  { path: 'tela-admin', component: TelaAdminComponent },  
   { path: 'lista-clientes', component: TabelaClientesComponent },
-  { path: 'edicaoCliente/:cod', component: FormClientesComponent },
-  { path: 'novoCliente', component: FormClientesComponent }  
+  { path: 'edicao-cliente/:cod', component: FormClientesComponent },
+  { path: 'novo-cliente', component: FormClientesComponent }  
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
+    TelaAdminComponent,
     TabelaClientesComponent,
     FormClientesComponent
   ],

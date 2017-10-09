@@ -14,23 +14,23 @@ export class CrudClientesService {
         return this.clientes;
     }
 
-    adicionarCliente(cliente:Cliente){
+    adicionarCliente(cliente: Cliente) {
         cliente.codigo=this.autoIncrement++;
         this.clientes.push(cliente);  
     }
 
-    getClientePorCodigo(codigo:number){
+    getClientePorCodigo(codigo: number) {
         return(this.clientes.find(cliente => cliente.codigo==codigo));
     }
 
-    removerCliente(cliente:Cliente){
+    removerCliente(cliente: Cliente) {
         let indice = this.clientes.indexOf(cliente, 0);
         if(indice >-1){
             this.clientes.splice(indice, 1);
         }
     }
 
-    atualizaCliente(codigo:number, cliente:Cliente){
+    atualizaCliente(codigo:number, cliente: Cliente) {
         let indice = this.clientes.indexOf(this.getClientePorCodigo(codigo), 0);
         this.clientes[indice] = cliente;
     }
