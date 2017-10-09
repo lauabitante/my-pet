@@ -1,0 +1,23 @@
+<div class ="form">
+  <form>
+    <label for="nome">Nome</label>
+    <input type ="text" id="nome" name="nome" placeholder="Nome" [(ngModel)]="cliente.nome">
+
+    <label for="cpf">CPF</label>
+    <input type="text" id="cpf" name="cpf" placeholder="CPF" [(ngModel)]="cliente.cpf">
+
+    <label for="telefone">Telefone</label>
+    <input type="text" id="telefone" name="telefone" placeholder="Telefone" [(ngModel)]="cliente.telefone">
+
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email" placeholder="Email" [(ngModel)]="cliente.email">
+
+    <div class="buttons">
+      <input type="button" (click)="salvarCliente()" value="Salvar">
+      <input type="button" (click)="cancelar()" value="Cancelar">
+      <div>
+          <input type="button" (click)="voltar()" value="Voltar">
+      </div>   
+    </div>   
+  </form>
+</div>
