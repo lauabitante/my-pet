@@ -45,6 +45,6 @@ export class FormClientesComponent implements OnInit {
   }
 
   voltar() {
-        this.router.navigate(['/tela-cliente']);
+        this.router.navigate(['/tela-admin']);
   }
 }

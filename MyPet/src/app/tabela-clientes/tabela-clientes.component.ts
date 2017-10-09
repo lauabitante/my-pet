@@ -24,6 +24,6 @@ export class TabelaClientesComponent implements OnInit {
     }
 
   voltar() {
-        this.router.navigate(['/']);
+        this.router.navigate(['/tela-admin']);
   }
 }
