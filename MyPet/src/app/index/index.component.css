@@ -1,0 +1,22 @@
+.main {
+    width: 100%;
+}
+
+.option {
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+
+a {
+    color: purple;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: green;
+}
+
+.intro {
+    padding: 50px;
+}

@@ -13,15 +13,15 @@ import { CrudClientesService } from '../crud-clientes.service';
 export class TabelaClientesComponent implements OnInit {
   clientes: Cliente[] = [];
   constructor (
-    private service:CrudClientesService, 
+    private service: CrudClientesService, 
     private router: Router ) { }
 
  ngOnInit() {
         this.clientes = this.service.getClientes();
     }
-    remover(cliente: Cliente) {
-      this.service.removerCliente(cliente);
-    }
+  remover(cliente: Cliente) {
+    this.service.removerCliente(cliente);
+  }
 
   voltar() {
         this.router.navigate(['/tela-admin']);
