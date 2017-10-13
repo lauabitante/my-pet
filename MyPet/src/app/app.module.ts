@@ -15,6 +15,7 @@ import { IndexComponent } from './index/index.component';
 import { TelaClienteComponent } from './tela-cliente/tela-cliente.component';
 import { TabelaServicosComponent } from './tabela-servicos/tabela-servicos.component';
 import { CrudServicosService} from './crud-servicos.service';
+import { FormServicosComponent } from './form-servicos/form-servicos.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'index', pathMatch: 'full' },
@@ -40,7 +41,8 @@ const routes: Routes = [
     TabelaFuncionariosComponent,
     FormFuncionariosComponent,
     IndexComponent,
-    TabelaServicosComponent    
+    TabelaServicosComponent,
+    FormServicosComponent    
   ],
   imports: [
     BrowserModule,
