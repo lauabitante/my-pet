@@ -28,7 +28,8 @@ const routes: Routes = [
   { path: 'edicao-funcionario/:cod', component: FormFuncionariosComponent },
   { path: 'novo-funcionario', component: FormFuncionariosComponent },
   { path: 'index', component: IndexComponent },
-  { path: 'lista-servicos', component: TabelaServicosComponent } 
+  { path: 'lista-tipo-servicos', component: TabelaServicosComponent },
+  { path: 'form-servicos', component: FormServicosComponent }
 ];
 
 @NgModule({
