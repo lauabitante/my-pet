@@ -1,0 +1,16 @@
+<h3>{{title}}</h3>
+<table>
+  <tr>
+    <th>Código</th> 
+    <th>Descrição</th> 
+    <th>Valor</th> 
+  </tr>
+  <tr *ngFor='let funcionario of funcionarios'>          
+    <td>{{funcionario.codigo}}</td> 
+    <td>{{funcionario.descricao}}</td>
+    <td>{{funcionario.valor}}</td> 
+  </tr>
+</table>
+<div class="buttons">
+  <input type="button" (click)="voltar()" value="Voltar">
+</div>    

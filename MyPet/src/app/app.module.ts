@@ -13,6 +13,7 @@ import { FormFuncionariosComponent } from './form-funcionarios/form-funcionarios
 import { CrudFuncionariosService } from './crud-funcionarios.service';
 import { IndexComponent } from './index/index.component';
 import { TelaClienteComponent } from './tela-cliente/tela-cliente.component';
+import { TabelaServicosComponent } from './tabela-servicos/tabela-servicos.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'index', pathMatch: 'full' },
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: 'lista-funcionarios', component: TabelaFuncionariosComponent },
   { path: 'edicao-funcionario/:cod', component: FormFuncionariosComponent },
   { path: 'novo-funcionario', component: FormFuncionariosComponent },
-  { path: 'index', component: IndexComponent } 
+  { path: 'index', component: IndexComponent },
+  { path: 'lista-servicos', component: TabelaServicosComponent } 
 ];
 
 @NgModule({
@@ -36,7 +38,8 @@ const routes: Routes = [
     FormClientesComponent,
     TabelaFuncionariosComponent,
     FormFuncionariosComponent,
-    IndexComponent    
+    IndexComponent,
+    TabelaServicosComponent    
   ],
   imports: [
     BrowserModule,
