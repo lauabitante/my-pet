@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 
-import { Servico } from './servico';
+import { TipoServico } from './tipoServico';
 
 @Injectable()
 export class CrudServicosService {
-  servicos: Servico[] = [
+  tipoServicos: TipoServico[] = [
       {codigo: 1, nome:"Tosa" ,descricao:"Banho no seu pet com aparação dos pelos conforme pedido do cliente", valor: 30.0}
 
   ];
@@ -13,6 +13,6 @@ export class CrudServicosService {
   constructor() { }
   
   getServicos(){
-    return this.servicos;
+    return this.tipoServicos;
   }
 }
