@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { ServicosService } from './servicos.service';
+import { CrudServicosService } from './crud-servicos.service';
 
 describe('ServicosService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ServicosService]
+      providers: [CrudServicosService]
     });
   });
 
-  it('should be created', inject([ServicosService], (service: ServicosService) => {
+  it('should be created', inject([CrudServicosService], (service: CrudServicosService) => {
     expect(service).toBeTruthy();
   }));
 });
