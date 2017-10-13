@@ -14,6 +14,7 @@ import { CrudFuncionariosService } from './crud-funcionarios.service';
 import { IndexComponent } from './index/index.component';
 import { TelaClienteComponent } from './tela-cliente/tela-cliente.component';
 import { TabelaServicosComponent } from './tabela-servicos/tabela-servicos.component';
+import { CrudServicosService} from './crud-servicos.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'index', pathMatch: 'full' },
@@ -46,7 +47,7 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [CrudClientesService, CrudFuncionariosService],
+  providers: [CrudClientesService, CrudFuncionariosService, CrudServicosService],
   bootstrap: [AppComponent]
 })
 

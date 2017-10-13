@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router,RouterLink} from '@angular/router';
+import { Router} from '@angular/router';
+
+import { Servico } from '../servico';
+import { CrudServicosService } from '../crud-servicos.service';
 
 @Component({
   selector: 'app-tabela-servicos',
@@ -7,14 +10,15 @@ import { Router,RouterLink} from '@angular/router';
   styleUrls: ['./tabela-servicos.component.css']
 })
 export class TabelaServicosComponent implements OnInit {
-
-  constructor(private router:Router) { }
+  servicos: Servico[] = [];
+  constructor(private service:CrudServicosService,private router:Router) { }
 
   ngOnInit() {
+      this.servicos = this.service.getServicos();
   }
 
   voltar(){
         this.router.navigate(['/tela-cliente']);
   }
-  
+
 }

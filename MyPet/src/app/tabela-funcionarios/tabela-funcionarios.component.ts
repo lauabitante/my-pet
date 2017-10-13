@@ -18,7 +18,8 @@ export class TabelaFuncionariosComponent implements OnInit {
   ngOnInit() {
         this.funcionarios = this.service.getFuncionarios();
     }
-    remover(funcionario: Funcionario){
+  
+  remover(funcionario: Funcionario){
       this.service.removerFuncionario(funcionario);
     }
 
