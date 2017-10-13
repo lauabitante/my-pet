@@ -11,6 +11,7 @@ import { TelaAdminComponent } from './tela-admin/tela-admin.component';
 import { TabelaFuncionariosComponent } from './tabela-funcionarios/tabela-funcionarios.component';
 import { FormFuncionariosComponent } from './form-funcionarios/form-funcionarios.component';
 import { CrudFuncionariosService } from './crud-funcionarios.service';
+import { IndexComponent } from './index/index.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full'},
@@ -30,7 +31,8 @@ const routes: Routes = [
     TabelaClientesComponent,
     FormClientesComponent,
     TabelaFuncionariosComponent,
-    FormFuncionariosComponent
+    FormFuncionariosComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,
