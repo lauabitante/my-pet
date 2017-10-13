@@ -11,16 +11,18 @@ import { TelaAdminComponent } from './tela-admin/tela-admin.component';
 import { TabelaFuncionariosComponent } from './tabela-funcionarios/tabela-funcionarios.component';
 import { FormFuncionariosComponent } from './form-funcionarios/form-funcionarios.component';
 import { CrudFuncionariosService } from './crud-funcionarios.service';
+import { IndexComponent } from './index/index.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '', pathMatch: 'full'},
+  { path: '', redirectTo: 'index', pathMatch: 'full'},
   { path: 'tela-admin', component: TelaAdminComponent },  
   { path: 'lista-clientes', component: TabelaClientesComponent },
   { path: 'edicao-cliente/:cod', component: FormClientesComponent },
   { path: 'novo-cliente', component: FormClientesComponent } ,
   { path: 'lista-funcionarios', component: TabelaFuncionariosComponent },
   { path: 'edicao-funcionario/:cod', component: FormFuncionariosComponent },
-  { path: 'novo-funcionario', component: FormFuncionariosComponent } 
+  { path: 'novo-funcionario', component: FormFuncionariosComponent },
+  { path: 'index', component: IndexComponent } 
 ];
 
 @NgModule({
@@ -30,7 +32,8 @@ const routes: Routes = [
     TabelaClientesComponent,
     FormClientesComponent,
     TabelaFuncionariosComponent,
-    FormFuncionariosComponent
+    FormFuncionariosComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,
