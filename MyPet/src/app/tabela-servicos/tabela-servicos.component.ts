@@ -16,4 +16,5 @@ export class TabelaServicosComponent implements OnInit {
   voltar(){
         this.router.navigate(['/tela-cliente']);
   }
+  
 }
