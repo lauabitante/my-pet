@@ -8,4 +8,5 @@ export class Servico {
     tipoServico:string;
     valorServico:number;
     observacao:string;
+    status: boolean = false;
 }

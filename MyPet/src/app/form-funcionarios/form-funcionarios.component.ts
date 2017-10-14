@@ -14,7 +14,7 @@ export class FormFuncionariosComponent implements OnInit {
   codigo: number;
   
   constructor (
-    private servico:CrudFuncionariosService, 
+    private service:CrudFuncionariosService, 
     private router:Router, 
     private rota:ActivatedRoute ) { }
 
@@ -23,16 +23,16 @@ export class FormFuncionariosComponent implements OnInit {
       if (isNaN(this.codigo)) {
         this.funcionario = new Funcionario();
       } else {
-        this.funcionario = Object.assign({},this.servico.getFuncionarioPorCodigo(this.codigo));
+        this.funcionario = Object.assign({},this.service.getFuncionarioPorCodigo(this.codigo));
       }
   }
 
   salvarFuncionario() {
     if (isNaN(this.codigo)) {
-      this.servico.adicionarFuncionario(this.funcionario);
+      this.service.adicionarFuncionario(this.funcionario);
       this.funcionario = new Funcionario();
     } else {
-      this.servico.atualizaFuncionario(this.codigo, this.funcionario);
+      this.service.atualizaFuncionario(this.codigo, this.funcionario);
     }
     this.router.navigate(['/lista-funcionarios']);
   }
