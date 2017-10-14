@@ -17,6 +17,7 @@ import { TabelaTipoServicosComponent } from './tabela-tipo-servicos/tabela-tipo-
 import { CrudTipoServicosService} from './crud-tipo-servicos.service';
 import { FormServicosComponent } from './form-servicos/form-servicos.component';
 import { CrudServicosService } from './crud-servicos.service';
+import { TabelaServicosComponent } from './tabela-servicos/tabela-servicos.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'index', pathMatch: 'full' },
@@ -30,7 +31,8 @@ const routes: Routes = [
   { path: 'novo-funcionario', component: FormFuncionariosComponent },
   { path: 'index', component: IndexComponent },
   { path: 'lista-tipo-servicos', component: TabelaTipoServicosComponent },
-  { path: 'form-servicos', component: FormServicosComponent }
+  { path: 'form-servicos', component: FormServicosComponent },
+  { path: 'lista-servicos', component: TabelaServicosComponent}
 ];
 
 @NgModule({
@@ -44,7 +46,8 @@ const routes: Routes = [
     FormFuncionariosComponent,
     IndexComponent,
     TabelaTipoServicosComponent,
-    FormServicosComponent    
+    FormServicosComponent,
+    TabelaServicosComponent    
   ],
   imports: [
     BrowserModule,
