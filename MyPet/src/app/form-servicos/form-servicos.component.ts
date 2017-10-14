@@ -18,14 +18,19 @@ export class FormServicosComponent implements OnInit {
     this.codigo = this.rota.snapshot.params['cod'];
       if (isNaN(this.codigo)) {
         this.servico = new Servico();
-      } 
+      } else {
+        this.servico = Object.assign({},this.service.getServicoPorCodigo(this.codigo));
+      }
   }
   
   salvarServico() { 
-    if (isNaN(this.codigo)) {
+      if (isNaN(this.codigo)) {
       this.service.adicionarServico(this.servico);
       this.servico = new Servico();
+    } else {
+      this.service.atualizaServico(this.codigo, this.servico);
     }
+
     this.router.navigate(['/tela-cliente']);
   }
 

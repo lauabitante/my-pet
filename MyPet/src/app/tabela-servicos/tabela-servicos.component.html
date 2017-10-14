@@ -1,3 +1,35 @@
-<p>
-  tabela-servicos works!
-</p>
+<h3>{{title}}</h3>
+<table>
+  <tr>
+    <th>Código</th> 
+    <th>CPF do Cliente</th> 
+    <th>Nome do Pet</th> 
+    <th>Dia</th>
+    <th>Horário</th>
+    <th>Nome do Funcionário</th>
+    <th>Tipo do serviço</th>
+    <th>Valor do serviço</th> 
+    <th>Observação</th> 
+    <th>Status</th> 
+    <th>Editar</th>
+    <th>Remover</th>
+  </tr>
+  <tr *ngFor='let servico of servicos'>          
+    <td>{{servico.codigo}}</td> 
+    <td>{{servico.cpfCliente}}</td>
+    <td>{{servico.nomePet}}</td> 
+    <td>{{servico.dia}}</td>    
+    <td>{{servico.horario}}</td>    
+    <td>{{servico.nomeFuncionario}}</td>  
+    <td>{{servico.tipoServico}}</td>    
+    <td>{{servico.valorServico}}</td>    
+    <td>{{servico.observacao}}</td>    
+    <td>{{servico.status}}</td>    
+
+    <td><a [routerLink]="['/edicao-servico', servico.codigo]">Editar</a></td>
+    <td><a routerLink="/lista-servicos" (click)="remover(servico)">Remover</a></td>
+  </tr>
+</table>
+<div class="buttons">
+  <input type="button" (click)="voltar()" value="Voltar">
+</div>    

@@ -32,7 +32,8 @@ const routes: Routes = [
   { path: 'index', component: IndexComponent },
   { path: 'lista-tipo-servicos', component: TabelaTipoServicosComponent },
   { path: 'form-servicos', component: FormServicosComponent },
-  { path: 'lista-servicos', component: TabelaServicosComponent}
+  { path: 'lista-servicos', component: TabelaServicosComponent},
+  { path: 'edicao-servico/:cod', component: FormServicosComponent }
 ];
 
 @NgModule({

@@ -1,28 +1,28 @@
 <div class ="form">
     <form>
       <label for="cpfCliente">CPF cliente</label>
-      <input type ="text" id="cpfCliente" name="cpfCliente" placeholder="CPF...." >
+      <input type ="text" id="cpfCliente" name="cpfCliente" placeholder="CPF...." [(ngModel)]="servico.cpfCliente">
   
-      <label for="cpf">Nome do Pet</label>
-      <input type="text" id="cpf" name="cpf" placeholder="CPF" >
+      <label for="nomePet">Nome do Pet</label>
+      <input type="text" id="nomePet" name="nomePet" placeholder="Nome do Pet..." [(ngModel)]="servico.nomePet">
   
-      <label for="telefone">Dia</label>
-      <input type="text" id="telefone" name="telefone" placeholder="Telefone" >
+      <label for="dia">Dia</label>
+      <input type="text" id="dia" name="dia" placeholder="Dia..." [(ngModel)]="servico.dia">
   
-      <label for="data_de_nascimento">Horário</label>
-      <input type="text" id="data_de_nascimento" name="data_de_nascimento" placeholder="Data de Nascimento" >
+      <label for="horario">Horário</label>
+      <input type="text" id="horario" name="horario" placeholder="Horário..." [(ngModel)]="servico.horario">
   
-      <label for="especialidade">Funcionário</label>
-      <input type="text" id="especialidade" name="especialidade" placeholder="Especialidade" >
+      <label for="funcionario">Funcionário</label>
+      <input type="text" id="funcionario" name="funcionario" placeholder="Funcionário..." [(ngModel)]="servico.funcionario">
       
-      <label for="especialidade">Tipo de Serviço</label>
-      <input type="text" id="especialidade" name="especialidade" placeholder="Especialidade" >
+      <label for="tipoServico">Tipo de Serviço</label>
+      <input type="text" id="tipoServico" name="tipoServico" placeholder="Tipo de Serviço..." [(ngModel)]="servico.tipoServico">
       
-      <label for="especialidade">Valor</label>
-      <input type="text" id="especialidade" name="especialidade" placeholder="Especialidade" >
+      <label for="valor">Valor</label>
+      <input type="text" id="valor" name="valor" placeholder="Valor..." [(ngModel)]="servico.valor">
   
-      <label for="especialidade">Observação</label>
-      <input type="text" id="especialidade" name="especialidade" placeholder="Especialidade" >
+      <label for="observacao">Observação</label>
+      <input type="text" id="observacao" name="observcao" placeholder="Observação" [(ngModel)]="servico.observacao">
   
       <div class="buttons">
         <input type="button" (click)="salvarServico()" value="Salvar">
