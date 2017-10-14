@@ -13,7 +13,7 @@ import { FormFuncionariosComponent } from './form-funcionarios/form-funcionarios
 import { CrudFuncionariosService } from './crud-funcionarios.service';
 import { IndexComponent } from './index/index.component';
 import { TelaClienteComponent } from './tela-cliente/tela-cliente.component';
-import { TabelaServicosComponent } from './tabela-servicos/tabela-servicos.component';
+import { TabelaTipoServicosComponent } from './tabela-tipo-servicos/tabela-tipo-servicos.component';
 import { CrudTipoServicosService} from './crud-tipo-servicos.service';
 import { FormServicosComponent } from './form-servicos/form-servicos.component';
 import { CrudServicosService } from './crud-servicos.service';
@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'edicao-funcionario/:cod', component: FormFuncionariosComponent },
   { path: 'novo-funcionario', component: FormFuncionariosComponent },
   { path: 'index', component: IndexComponent },
-  { path: 'lista-tipo-servicos', component: TabelaServicosComponent },
+  { path: 'lista-tipo-servicos', component: TabelaTipoServicosComponent },
   { path: 'form-servicos', component: FormServicosComponent }
 ];
 
@@ -43,7 +43,7 @@ const routes: Routes = [
     TabelaFuncionariosComponent,
     FormFuncionariosComponent,
     IndexComponent,
-    TabelaServicosComponent,
+    TabelaTipoServicosComponent,
     FormServicosComponent    
   ],
   imports: [

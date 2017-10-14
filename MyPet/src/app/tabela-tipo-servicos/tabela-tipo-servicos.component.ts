@@ -5,11 +5,11 @@ import { TipoServico } from '../tipoServico';
 import { CrudTipoServicosService } from '../crud-tipo-servicos.service';
 
 @Component({
-  selector: 'app-tabela-servicos',
-  templateUrl: './tabela-servicos.component.html',
-  styleUrls: ['./tabela-servicos.component.css']
+  selector: 'app-tabela-tipo-servicos',
+  templateUrl: './tabela-tipo-servicos.component.html',
+  styleUrls: ['./tabela-tipo-servicos.component.css']
 })
-export class TabelaServicosComponent implements OnInit {
+export class TabelaTipoServicosComponent implements OnInit {
   tipoServicos: TipoServico[] = [];
   constructor(private service:CrudTipoServicosService,private router:Router) { }
 
