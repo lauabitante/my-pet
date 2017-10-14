@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { TipoServico } from './tipoServico';
 
 @Injectable()
-export class CrudServicosService {
+export class CrudTipoServicosService {
   tipoServicos: TipoServico[] = [
       {codigo: 1, nome:"Tosa" ,descricao:"Banho no seu pet com aparação dos pelos conforme pedido do cliente", valor: 30.0}
 

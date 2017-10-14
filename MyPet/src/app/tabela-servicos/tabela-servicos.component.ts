@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
 
 import { TipoServico } from '../tipoServico';
-import { CrudServicosService } from '../crud-servicos.service';
+import { CrudTipoServicosService } from '../crud-tipo-servicos.service';
 
 @Component({
   selector: 'app-tabela-servicos',
@@ -11,7 +11,7 @@ import { CrudServicosService } from '../crud-servicos.service';
 })
 export class TabelaServicosComponent implements OnInit {
   tipoServicos: TipoServico[] = [];
-  constructor(private service:CrudServicosService,private router:Router) { }
+  constructor(private service:CrudTipoServicosService,private router:Router) { }
 
   ngOnInit() {
       this.tipoServicos = this.service.getServicos();
