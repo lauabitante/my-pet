@@ -17,11 +17,11 @@ export class TabelaServicosComponent implements OnInit {
       this.servicos = this.service.getServicos();
   }
 
-  remover(servico: Servico){
-      this.service.removerServico(servico);
-    }
+  remover(servico: Servico) {
+    this.service.removerServico(servico);
+  }
 
-  voltar(){
-        this.router.navigate(['/tela-admin']);
+  voltar() {
+    this.router.navigate(['/tela-admin']);
   }
 }

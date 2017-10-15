@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 import { Funcionario } from './funcionario';
 
 @Injectable()
@@ -10,27 +9,27 @@ export class CrudFuncionariosService {
   ];
   autoIncrement: number = 2;
   constructor() { }
-    getFuncionarios(){
+    getFuncionarios() {
         return this.funcionarios;
     }
 
-    adicionarFuncionario(funcionario:Funcionario){
-        funcionario.codigo=this.autoIncrement++;
+    getFuncionarioPorCodigo(codigo: number) {
+        return(this.funcionarios.find(funcionario => funcionario.codigo == codigo));
+    }
+
+    adicionarFuncionario(funcionario: Funcionario) {
+        funcionario.codigo = this.autoIncrement++;
         this.funcionarios.push(funcionario);  
     }
 
-    getFuncionarioPorCodigo(codigo:number){
-        return(this.funcionarios.find(funcionario => funcionario.codigo==codigo));
-    }
-
-    removerFuncionario(funcionario:Funcionario){
+    removerFuncionario(funcionario: Funcionario) {
         let indice = this.funcionarios.indexOf(funcionario, 0);
-        if(indice >-1){
+        if (indice >- 1) {
             this.funcionarios.splice(indice, 1);
         }
     }
 
-    atualizaFuncionario(codigo:number, funcionario:Funcionario){
+    atualizaFuncionario(codigo: number, funcionario: Funcionario) {
         let indice = this.funcionarios.indexOf(this.getFuncionarioPorCodigo(codigo), 0);
         this.funcionarios[indice] = funcionario;
     }

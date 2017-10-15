@@ -16,14 +16,19 @@ export class TabelaClientesComponent implements OnInit {
     private service: CrudClientesService, 
     private router: Router ) { }
 
- ngOnInit() {
+  ngOnInit() {
         this.clientes = this.service.getClientes();
-    }
+  }
+
+  adicionar() {
+    this.router.navigate(['/novo-cliente']);
+  }
+
   remover(cliente: Cliente) {
     this.service.removerCliente(cliente);
   }
 
   voltar() {
-        this.router.navigate(['/tela-admin']);
+    this.router.navigate(['/tela-admin']);
   }
 }

@@ -1,4 +1,4 @@
-input[type=text]{
+input[type=text] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -8,7 +8,7 @@ input[type=text]{
     box-sizing: border-box;
 }
 
-input[type=button]{
+input[type=button] {
     width: 40%;
     background-color: #848484;
     color: white;
@@ -18,18 +18,19 @@ input[type=button]{
     cursor: pointer;
 }
 
-input[type=button]:hover{
+input[type=button]:hover {
     background-color: #B8B8B8;
 }
 
-.buttons{
+.buttons {
     text-align: center;
     display: block;
     width: 50%;
     margin: auto;
+    padding-top: 15px;
 }
 
-.form{
+.form {
     border-radius: 4px;
     background-color: #F2F2F2;
     padding: 20px;

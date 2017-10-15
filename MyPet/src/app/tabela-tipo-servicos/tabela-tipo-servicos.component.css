@@ -19,6 +19,7 @@ tr:nth-child(even){
     display: block;
     width: 50%;
     margin: auto;
+    padding-top: 15px;
 }
 
 input[type=button]{

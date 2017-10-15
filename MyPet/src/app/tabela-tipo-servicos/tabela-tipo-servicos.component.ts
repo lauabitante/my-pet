@@ -17,8 +17,11 @@ export class TabelaTipoServicosComponent implements OnInit {
       this.tipoServicos = this.service.getServicos();
   }
 
-  voltar(){
-        this.router.navigate(['/tela-cliente']);
+  adicionar() {
+    this.router.navigate(['/form-servicos']);
   }
 
+  voltar() {
+    this.router.navigate(['/tela-admin']);
+  }
 }

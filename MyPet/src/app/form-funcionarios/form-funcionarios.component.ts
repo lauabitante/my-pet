@@ -42,6 +42,6 @@ export class FormFuncionariosComponent implements OnInit {
   }
 
   voltar() {
-    this.router.navigate(['/tela-admin']);
+    this.router.navigate(['/lista-funcionarios']);
   }
 }

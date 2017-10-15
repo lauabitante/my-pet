@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
-
-
 import { Funcionario } from "../funcionario";
 import { CrudFuncionariosService } from "../crud-funcionarios.service";
 
@@ -19,13 +17,17 @@ export class TabelaFuncionariosComponent implements OnInit {
 
   ngOnInit() {
         this.funcionarios = this.service.getFuncionarios();
-    }
-  
-  remover(funcionario: Funcionario){
-      this.service.removerFuncionario(funcionario);
-    }
+  }
 
-  voltar(){
+  adicionar() {
+    this.router.navigate(['/novo-funcionario']);
+  }
+  
+  remover(funcionario: Funcionario) {
+    this.service.removerFuncionario(funcionario);
+  }
+
+  voltar() {
         this.router.navigate(['/tela-admin']);
   }
 }
