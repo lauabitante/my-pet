@@ -1,0 +1,17 @@
+<table>
+  <tr>
+    <th>Código</th>
+    <th>Nome do serviço</th> 
+    <th>Descrição</th> 
+    <th>Valor</th> 
+  </tr>
+  <tr *ngFor='let tipoServico of tipoServicos'>          
+    <td>{{tipoServico.codigo}}</td> 
+    <td>{{tipoServico.nome}}</td>
+    <td>{{tipoServico.descricao}}</td>
+    <td>{{tipoServico.valor}}</td> 
+  </tr>
+</table>
+<div class="buttons">
+  <input type="button" (click)="voltar()" value="Voltar">
+</div>    
