@@ -18,6 +18,7 @@ import { CrudTipoServicosService} from './crud-tipo-servicos.service';
 import { FormServicosComponent } from './form-servicos/form-servicos.component';
 import { CrudServicosService } from './crud-servicos.service';
 import { TabelaServicosComponent } from './tabela-servicos/tabela-servicos.component';
+import { FormTipoServicoComponent } from './form-tipo-servico/form-tipo-servico.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'index', pathMatch: 'full' },
@@ -48,7 +49,8 @@ const routes: Routes = [
     IndexComponent,
     TabelaTipoServicosComponent,
     FormServicosComponent,
-    TabelaServicosComponent    
+    TabelaServicosComponent,
+    FormTipoServicoComponent    
   ],
   imports: [
     BrowserModule,
