@@ -1,35 +1,74 @@
-<div class ="form">
+<div class="form">
     <form>
       <label for="cpfCliente">CPF cliente</label>
-      <input type ="text" id="cpfCliente" name="cpfCliente" placeholder="CPF...." [(ngModel)]="servico.cpfCliente">
+      <input type ="text" 
+             id="cpfCliente" 
+             name="cpfCliente" 
+             placeholder="CPF" 
+             [(ngModel)]="servico.cpfCliente">
   
       <label for="nomePet">Nome do Pet</label>
-      <input type="text" id="nomePet" name="nomePet" placeholder="Nome do Pet..." [(ngModel)]="servico.nomePet">
+      <input type="text" 
+             id="nomePet" 
+             name="nomePet" 
+             placeholder="Nome do Pet" 
+             [(ngModel)]="servico.nomePet">
   
       <label for="dia">Dia</label>
-      <input type="text" id="dia" name="dia" placeholder="Dia..." [(ngModel)]="servico.dia">
+      <input type="text" 
+             id="dia" 
+             name="dia" 
+             placeholder="Dia" 
+             [(ngModel)]="servico.dia">
   
       <label for="horario">Horário</label>
-      <input type="text" id="horario" name="horario" placeholder="Horário..." [(ngModel)]="servico.horario">
+      <input type="text" 
+             id="horario" 
+             name="horario" 
+             placeholder="Horário" 
+             [(ngModel)]="servico.horario">
   
       <label for="funcionario">Funcionário</label>
-      <input type="text" id="funcionario" name="funcionario" placeholder="Funcionário..." [(ngModel)]="servico.funcionario">
+      <input type="text" 
+             id="funcionario" 
+             name="funcionario" 
+             placeholder="Funcionário" 
+             [(ngModel)]="servico.funcionario">
       
       <label for="tipoServico">Tipo de Serviço</label>
-      <input type="text" id="tipoServico" name="tipoServico" placeholder="Tipo de Serviço..." [(ngModel)]="servico.tipoServico">
+      <input type="text" 
+             id="tipoServico" 
+             name="tipoServico" 
+             placeholder="Tipo de Serviço" 
+             [(ngModel)]="servico.tipoServico">
       
       <label for="valor">Valor</label>
-      <input type="text" id="valor" name="valor" placeholder="Valor..." [(ngModel)]="servico.valor">
+      <input type="text" 
+             id="valor" 
+             name="valor" 
+             placeholder="Valor" 
+             [(ngModel)]="servico.valor">
   
       <label for="observacao">Observação</label>
-      <input type="text" id="observacao" name="observcao" placeholder="Observação" [(ngModel)]="servico.observacao">
+      <input type="text" 
+             id="observacao" 
+             name="observcao" 
+             placeholder="Observação" 
+             [(ngModel)]="servico.observacao">
   
       <div class="buttons">
-        <input type="button" (click)="salvarServico()" value="Salvar">
-        <input type="button" (click)="cancelar()" value="Cancelar">
+        <input type="button" 
+               (click)="salvarServico()" 
+               value="Salvar">
+
+        <input type="button" 
+               (click)="cancelar()" 
+               value="Cancelar">
       </div>
       <div class="buttons">
-        <input type="button" (click)="voltar()" value="Voltar">
+        <input type="button" 
+               (click)="voltar()" 
+               value="Voltar">
       </div>
     </form>
   </div>
