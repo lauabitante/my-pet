@@ -1,3 +1,39 @@
-<p>
-  form-tipo-servico works!
-</p>
+<div class="form">
+    <form>
+      <label for="nome">Serviço</label>
+      <input type ="text" 
+             id="nome" 
+             name="nome" 
+             placeholder="Serviço" 
+             [(ngModel)]="tipoServico.nome">
+  
+      <label for="descricao">Descrição</label>
+      <input type="text" 
+             id="descricao" 
+             name="descricao" 
+             placeholder="Descrição" 
+             [(ngModel)]="tipoServico.descricao">
+  
+      <label for="valor">Valor</label>
+      <input type="text" 
+             id="valor" 
+             name="valor" 
+             placeholder="Valor" 
+             [(ngModel)]="tipoServico.valor">
+  
+      <div class="buttons">
+        <input type="button" 
+               (click)="salvarTipoServico()" 
+               value="SALVAR">
+
+        <input type="button" 
+               (click)="cancelar()" 
+               value="LIMPAR">
+      </div>
+      <div class="buttons">
+        <input type="button" 
+               (click)="voltar()" 
+               value="VOLTAR">
+      </div>
+    </form>
+  </div>

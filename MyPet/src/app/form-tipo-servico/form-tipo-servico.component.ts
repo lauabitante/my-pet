@@ -36,7 +36,7 @@ export class FormTipoServicoComponent implements OnInit {
     } else {
       this.service.atualizarTipoServico(this.codigo, this.tipoServico);
     }
-    this.router.navigate(['/tela-admin']);
+    this.router.navigate(['/lista-tipos-servico']);
   }
 
   cancelar() {
@@ -44,6 +44,6 @@ export class FormTipoServicoComponent implements OnInit {
   }
 
   voltar() {
-    this.router.navigate(['/tela-admin']);
+    this.router.navigate(['/lista-tipos-servico']);
   }
 }

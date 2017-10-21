@@ -30,7 +30,7 @@ export class FormServicosComponent implements OnInit {
         this.servico = new Servico();
       } else {
         this.servico = Object.assign({},this.service.getServicoPorCodigo(this.codigo));
-      }
+      } 
   }
   
   salvarServico() { 
@@ -47,7 +47,6 @@ export class FormServicosComponent implements OnInit {
       this.servico = new Servico();
       this.servico.funcionario = new Funcionario();
       this.funcionarios = this.serviceFuncionario.getFuncionarios();
-
   }
   cancelar() {
     this.servico = new Servico;

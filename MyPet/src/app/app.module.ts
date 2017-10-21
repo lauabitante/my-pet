@@ -33,7 +33,7 @@ const routes: Routes = [
   { path: 'edicao-tipo-servico/:cod', component: FormTipoServicoComponent },  
   { path: 'lista-tipos-servico', component: TabelaTipoServicosComponent },
   { path: 'form-servicos', component: FormServicosComponent },
-  { path: 'lista-servicos', component: TabelaServicosComponent},
+  { path: 'lista-servicos', component: TabelaServicosComponent },
   { path: 'edicao-servico/:cod', component: FormServicosComponent }
 ];
 

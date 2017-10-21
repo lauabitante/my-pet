@@ -1,6 +1,5 @@
 import { Funcionario } from './funcionario';
 
-
 export class Servico {
     codigo: number;
     cpfCliente: string;
