@@ -29,12 +29,16 @@
              [(ngModel)]="servico.horario">
   
       <label for="funcionario">Funcionário</label>
-      <input type="text" 
-             id="funcionario" 
-             name="funcionario" 
-             placeholder="Funcionário" 
-             [(ngModel)]="servico.funcionario">
-      
+      <select name="funcionarios"
+              id="funcionarios" 
+              [(ngModel)]="servico.funcionario">
+          <option *ngFor="let func of funcionarios" 
+                  [ngValue]="func">
+                   {{func.nome}}
+          </option>
+      </select>  
+      <p></p>        
+
       <label for="tipoServico">Tipo de Serviço</label>
       <input type="text" 
              id="tipoServico" 
