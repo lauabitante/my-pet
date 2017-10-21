@@ -1,24 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
-
-import { TipoServico } from '../tipoServico';
+import { TipoServico } from '../tipo-servico';
 import { CrudTipoServicosService } from '../crud-tipo-servicos.service';
 
-@Component({
+@Component ({
   selector: 'app-tabela-tipo-servicos',
   templateUrl: './tabela-tipo-servicos.component.html',
   styleUrls: ['./tabela-tipo-servicos.component.css']
 })
+
 export class TabelaTipoServicosComponent implements OnInit {
-  tipoServicos: TipoServico[] = [];
-  constructor(private service:CrudTipoServicosService,private router:Router) { }
+  tiposServico: TipoServico[] = [];
+  constructor(private service: CrudTipoServicosService,private router:Router) { }
 
   ngOnInit() {
-      this.tipoServicos = this.service.getServicos();
+      this.tiposServico = this.service.getTiposServico();
   }
 
   adicionar() {
-    this.router.navigate(['/form-servicos']);
+    this.router.navigate(['/edicao-tipo-servico/:cod']);
   }
 
   voltar() {

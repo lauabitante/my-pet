@@ -1,17 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import{ Servico } from '../servico';
-import {CrudServicosService } from '../crud-servicos.service';
+import { Servico } from '../servico';
+import { CrudServicosService } from '../crud-servicos.service';
 
-@Component({
+@Component ({
   selector: 'app-form-servicos',
   templateUrl: './form-servicos.component.html',
   styleUrls: ['./form-servicos.component.css']
 })
+
 export class FormServicosComponent implements OnInit {
-  servico:Servico;
-  codigo:number;
-  constructor(private service: CrudServicosService, private router:Router,private rota:ActivatedRoute ) { }
+  servico: Servico;
+  codigo: number;
+
+  constructor (
+    private service: CrudServicosService, 
+    private router: Router,
+    private rota: ActivatedRoute 
+  ) { }
 
   ngOnInit() {
     this.codigo = this.rota.snapshot.params['cod'];
@@ -29,7 +35,6 @@ export class FormServicosComponent implements OnInit {
     } else {
       this.service.atualizaServico(this.codigo, this.servico);
     }
-
     this.router.navigate(['/tela-cliente']);
   }
 

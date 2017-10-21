@@ -1,21 +1,43 @@
 import { Injectable } from '@angular/core';
-import { TipoServico } from './tipoServico';
+import { TipoServico } from './tipo-servico';
 
 @Injectable()
 export class CrudTipoServicosService {
-  tipoServicos: TipoServico[] = [
-      {
-        codigo: 1, 
-        nome:"Tosa",
-        descricao:"Banho no seu pet com aparação dos pelos conforme pedido do cliente", 
-        valor: 30.0
-      }
+  tiposServico: TipoServico[] = [
+    {
+      codigo: 1, 
+      nome: "Tosa",
+      descricao: "Banho no seu pet com aparação dos pelos conforme pedido do cliente", 
+      valor: 30.0
+    }
   ];
     autoIncrement: number = 2;
 
-  constructor() { }
+  constructor() { 
+  }
   
-  getServicos(){
-    return this.tipoServicos;
+  getTiposServico() {
+    return this.tiposServico;
+  }
+
+  getTipoServicoPorCodigo(codigo: number) {
+    return (this.tiposServico.find(servico => servico.codigo == codigo));
+  }
+
+  adicionarTipoServico(servico: TipoServico) {
+    servico.codigo = this.autoIncrement++;
+    this.tiposServico.push(servico);  
+  }
+
+  removerTipoServico(servico: TipoServico) {
+    let indice = this.tiposServico.indexOf(servico, 0);
+    if (indice >- 1) {
+      this.tiposServico.splice(indice, 1);
+    }
+  }
+
+  atualizarTipoServico(codigo: number, servico: TipoServico){
+    let indice = this.tiposServico.indexOf(this.getTipoServicoPorCodigo(codigo), 0);
+    this.tiposServico[indice] = servico;
   }
 }

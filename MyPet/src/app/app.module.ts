@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -31,7 +30,8 @@ const routes: Routes = [
   { path: 'edicao-funcionario/:cod', component: FormFuncionariosComponent },
   { path: 'novo-funcionario', component: FormFuncionariosComponent },
   { path: 'index', component: IndexComponent },
-  { path: 'lista-tipo-servicos', component: TabelaTipoServicosComponent },
+  { path: 'edicao-tipo-servico/:cod', component: FormTipoServicoComponent },  
+  { path: 'lista-tipos-servico', component: TabelaTipoServicosComponent },
   { path: 'form-servicos', component: FormServicosComponent },
   { path: 'lista-servicos', component: TabelaServicosComponent},
   { path: 'edicao-servico/:cod', component: FormServicosComponent }
@@ -57,7 +57,12 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [CrudClientesService, CrudFuncionariosService, CrudTipoServicosService, CrudServicosService],
+  providers: [
+    CrudClientesService, 
+    CrudFuncionariosService, 
+    CrudTipoServicosService, 
+    CrudServicosService
+  ],
   bootstrap: [AppComponent]
 })
 
