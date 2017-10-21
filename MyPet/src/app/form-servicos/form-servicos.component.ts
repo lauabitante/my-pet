@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import{ Servico } from '../servico';
-import {CrudServicosService } from '../crud-servicos.service';
+import { Servico } from '../servico';
+import { CrudServicosService } from '../crud-servicos.service';
+import { CrudFuncionariosService } from '../crud-funcionarios.service';
+import { Funcionario } from '../funcionario';
 
 @Component({
   selector: 'app-form-servicos',
@@ -12,9 +14,12 @@ import {CrudServicosService } from '../crud-servicos.service';
 export class FormServicosComponent implements OnInit {
   servico:Servico;
   codigo:number;
-  constructor(private service: CrudServicosService, private router:Router,private rota:ActivatedRoute ) { }
+  funcionarios: Funcionario[] =[];
+  constructor(private service: CrudServicosService, private serviceFuncionario: CrudFuncionariosService,
+               private router:Router,private rota:ActivatedRoute ) { }
 
   ngOnInit() {
+    this.iniciarServico();
     this.codigo = this.rota.snapshot.params['cod'];
       if (isNaN(this.codigo)) {
         this.servico = new Servico();
@@ -34,6 +39,12 @@ export class FormServicosComponent implements OnInit {
     this.router.navigate(['/tela-cliente']);
   }
 
+  iniciarServico(){
+      this.servico = new Servico();
+      this.servico.funcionario = new Funcionario();
+      this.funcionarios = this.serviceFuncionario.getFuncionarios();
+
+  }
   cancelar() {
     this.servico = new Servico;
   }

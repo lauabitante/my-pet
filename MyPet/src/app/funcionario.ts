@@ -6,3 +6,6 @@ export class Funcionario {
     data_de_nascimento: string;
     especialidade: string;
 }
+
+
+  
