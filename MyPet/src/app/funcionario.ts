@@ -3,7 +3,7 @@ export class Funcionario {
     nome: string;
     cpf: string;
     telefone: string;
-    data_de_nascimento: string;
+    dataNascimento: string;
     especialidade: string;
 }
 

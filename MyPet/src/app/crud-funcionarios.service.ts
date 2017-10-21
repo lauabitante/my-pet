@@ -4,7 +4,7 @@ import { Funcionario } from './funcionario';
 @Injectable()
 export class CrudFuncionariosService {
   funcionarios: Funcionario[] = [
-      {codigo:1, nome:"teste", cpf:"123.456.789-10", telefone:"1234-5678", data_de_nascimento:"25/12/1994", especialidade: "veterinário" }
+      {codigo:1, nome:"teste", cpf:"123.456.789-10", telefone:"1234-5678", dataNascimento:"25/12/1994", especialidade: "veterinário" }
 
   ];
   autoIncrement: number = 2;

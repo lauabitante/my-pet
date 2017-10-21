@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
-
 import { Servico } from '../servico';
 import { CrudServicosService } from '../crud-servicos.service';
+
 @Component({
   selector: 'app-tabela-servicos',
   templateUrl: './tabela-servicos.component.html',
