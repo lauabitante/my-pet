@@ -11,16 +11,13 @@
     <table border="5">
       <tr>
         <td>Nossos Serviços:</td>
+        <td>Valores         </td>
       </tr>
-      <tr>
-        <td>Serviço a</td>
+      <tr *ngFor='let lista of tiposServico'>
+        <td>{{lista.nome}}</td>
+        <td>R$ {{lista.valor}}</td>
       </tr>
-      <tr>
-        <td>Serviço b</td>
-      </tr>
-      <tr>
-        <td>Serviço c</td>
-      </tr>
+      
     </table> 
   </div> 
   <br>
