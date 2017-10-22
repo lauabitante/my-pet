@@ -1,4 +1,5 @@
 import { Funcionario } from './funcionario';
+import { TipoServico } from './tipo-servico';
 
 export class Servico {
     codigo: number;
@@ -7,7 +8,7 @@ export class Servico {
     dia: string;
     horario: string;
     funcionario: Funcionario;
-    tipoServico: string;
+    tipoServico: TipoServico;
     valorServico: number;
     observacao: string;
     status: boolean = false;

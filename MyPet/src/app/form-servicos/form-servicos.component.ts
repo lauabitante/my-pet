@@ -3,7 +3,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Servico } from '../servico';
 import { CrudServicosService } from '../crud-servicos.service';
 import { CrudFuncionariosService } from '../crud-funcionarios.service';
+import { CrudTiposServicoService } from '../crud-tipo-servicos.service';
 import { Funcionario } from '../funcionario';
+import { TipoServico } from '../tipo-servico';
 
 @Component ({
   selector: 'app-form-servicos',
@@ -14,11 +16,13 @@ import { Funcionario } from '../funcionario';
 export class FormServicosComponent implements OnInit {
   servico: Servico;
   codigo: number;
-  funcionarios: Funcionario[] = [];  
+  funcionarios: Funcionario[] = [];
+  tipoServicos: TipoServico[] = [];  
 
   constructor (
     private service: CrudServicosService,
-    private serviceFuncionario: CrudFuncionariosService, 
+    private serviceFuncionario: CrudFuncionariosService,
+    private serviceTiposServico: CrudTiposServicoService, 
     private router: Router,
     private rota: ActivatedRoute 
   ) { }
@@ -46,7 +50,9 @@ export class FormServicosComponent implements OnInit {
   iniciarServico(){
       this.servico = new Servico();
       this.servico.funcionario = new Funcionario();
+      this.servico.tipoServico = new TipoServico();
       this.funcionarios = this.serviceFuncionario.getFuncionarios();
+      this.tipoServicos = this.serviceTiposServico.getTiposServico();
   }
   cancelar() {
     this.servico = new Servico;

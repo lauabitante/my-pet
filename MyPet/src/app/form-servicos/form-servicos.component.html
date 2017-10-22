@@ -27,7 +27,9 @@
              name="horario" 
              placeholder="Horário" 
              [(ngModel)]="servico.horario">
-  
+
+      <p>
+
       <label for="funcionario">Funcionário</label>
       <select name="funcionarios"
               id="funcionarios" 
@@ -36,16 +38,20 @@
                   [ngValue]="func">
                    {{func.nome}}
           </option>
-      </select>  
-      <p></p>        
+      </select>               
+      </p>
+      <p>
+      <label for="tipoDeServico">Tipo de Serviço</label>
+      <select name="tipoDeServico"
+              id="tipoDeServico"
+              [(ngModel)]="servico.tipoServico">
+          <option *ngFor="let tpserv of tipoServicos"
+                  [ngValue]="tpserv">
+                  {{tpserv.nome}}
+          </option>
+      </select>
+      </p>
 
-      <label for="tipoServico">Tipo de Serviço</label>
-      <input type="text" 
-             id="tipoServico" 
-             name="tipoServico" 
-             placeholder="Tipo de Serviço" 
-             [(ngModel)]="servico.tipoServico">
-      
       <label for="valor">Valor</label>
       <input type="text" 
              id="valor" 

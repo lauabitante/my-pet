@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Servico } from './servico';
 import { Funcionario } from './funcionario';
+import {TipoServico } from './tipo-servico';
 
 @Injectable()
 export class CrudServicosService {
@@ -12,7 +13,7 @@ export class CrudServicosService {
         dia: "1234-5678", 
         horario: "25/12/1994", 
         funcionario: new Funcionario(), 
-        tipoServico: "", 
+        tipoServico: new TipoServico(), 
         valorServico: 30, 
         observacao: "", 
         status: false
