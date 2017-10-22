@@ -35,3 +35,11 @@ input[type=button] {
     border-radius:5px;
     cursor: pointer;
 }
+
+input[type=button]:hover {
+    background-color: lightcoral;
+}
+
+.icons{
+    width: 20px;
+}
