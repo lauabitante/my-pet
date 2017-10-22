@@ -19,6 +19,7 @@ import { CrudServicosService } from './crud-servicos.service';
 import { TabelaServicosComponent } from './tabela-servicos/tabela-servicos.component';
 import { FormTipoServicoComponent } from './form-tipo-servico/form-tipo-servico.component';
 import { MoedaPipe } from './moeda.pipe';
+import { MascaraDirective } from './mascara.directive';
 
 const routes: Routes = [
   { path: '', redirectTo: 'index', pathMatch: 'full' },
@@ -52,7 +53,8 @@ const routes: Routes = [
     FormServicosComponent,
     TabelaServicosComponent,
     FormTipoServicoComponent,
-    MoedaPipe    
+    MoedaPipe,
+    MascaraDirective    
   ],
   imports: [
     BrowserModule,

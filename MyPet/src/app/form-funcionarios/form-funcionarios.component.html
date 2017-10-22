@@ -21,6 +21,7 @@
              id="cpf" 
              name="cpf" 
              placeholder="CPF" 
+             mascara="999.999.999-99"
              [(ngModel)]="funcionario.cpf">
   
       <label for="telefone">Telefone</label>
@@ -28,6 +29,7 @@
              id="telefone" 
              name="telefone" 
              placeholder="Telefone" 
+             mascara="(99)99999-9999"
              [(ngModel)]="funcionario.telefone">
   
       <label for="dataNascimento">Data de Nascimento</label>
@@ -35,7 +37,9 @@
              id="dataNascimento" 
              name="dataNascimento" 
              placeholder="Data de Nascimento" 
-             [(ngModel)]="funcionario.dataNascimento">
+             mascara="99/99/9999"
+             [(ngModel)]="funcionario.dataNascimento"
+             >
   
       <label for="especialidade">Especialidade</label>
       <input type="text" 
