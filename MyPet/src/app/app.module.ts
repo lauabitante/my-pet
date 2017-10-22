@@ -18,6 +18,7 @@ import { FormServicosComponent } from './form-servicos/form-servicos.component';
 import { CrudServicosService } from './crud-servicos.service';
 import { TabelaServicosComponent } from './tabela-servicos/tabela-servicos.component';
 import { FormTipoServicoComponent } from './form-tipo-servico/form-tipo-servico.component';
+import { MoedaPipe } from './moeda.pipe';
 
 const routes: Routes = [
   { path: '', redirectTo: 'index', pathMatch: 'full' },
@@ -50,7 +51,8 @@ const routes: Routes = [
     TabelaTipoServicosComponent,
     FormServicosComponent,
     TabelaServicosComponent,
-    FormTipoServicoComponent    
+    FormTipoServicoComponent,
+    MoedaPipe    
   ],
   imports: [
     BrowserModule,
