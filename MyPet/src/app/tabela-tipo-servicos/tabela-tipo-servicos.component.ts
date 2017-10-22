@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router} from '@angular/router';
+import { Router } from '@angular/router';
 import { TipoServico } from '../tipo-servico';
 import { CrudTipoServicosService } from '../crud-tipo-servicos.service';
 
