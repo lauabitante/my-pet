@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TipoServico } from './../tipo-servico';
-import { CrudTipoServicosService } from './../crud-tipo-servicos.service';
+import { CrudTiposServicoService } from './../crud-tipo-servicos.service';
 
 @Component ({
   selector: 'app-form-tipo-servico',
@@ -15,7 +15,7 @@ export class FormTipoServicoComponent implements OnInit {
   codigo: number;
 
   constructor (
-    private service: CrudTipoServicosService, 
+    private service: CrudTiposServicoService, 
     private router: Router,
     private rota: ActivatedRoute 
   ) { }

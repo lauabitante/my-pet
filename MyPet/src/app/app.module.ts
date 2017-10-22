@@ -13,7 +13,7 @@ import { CrudFuncionariosService } from './crud-funcionarios.service';
 import { IndexComponent } from './index/index.component';
 import { TelaClienteComponent } from './tela-cliente/tela-cliente.component';
 import { TabelaTipoServicosComponent } from './tabela-tipo-servicos/tabela-tipo-servicos.component';
-import { CrudTipoServicosService} from './crud-tipo-servicos.service';
+import { CrudTiposServicoService} from './crud-tipo-servicos.service';
 import { FormServicosComponent } from './form-servicos/form-servicos.component';
 import { CrudServicosService } from './crud-servicos.service';
 import { TabelaServicosComponent } from './tabela-servicos/tabela-servicos.component';
@@ -62,7 +62,7 @@ const routes: Routes = [
   providers: [
     CrudClientesService, 
     CrudFuncionariosService, 
-    CrudTipoServicosService, 
+    CrudTiposServicoService, 
     CrudServicosService
   ],
   bootstrap: [AppComponent]

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { TipoServico } from './tipo-servico';
 
 @Injectable()
-export class CrudTipoServicosService {
+export class CrudTiposServicoService {
   tiposServico: TipoServico[] = [
     {
       codigo: 1, 
