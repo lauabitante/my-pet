@@ -1,20 +1,24 @@
-table{
+table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
 }
 
-td, th{
+.table {
+    padding-top: 35px;
+}
+
+td, th {
     border: 1px solid #F2F2F2;
     text-align: left;
     padding:8px;
 }
 
-tr:nth-child(even){
+tr:nth-child(even) {
     background-color: #F2F2F2;
 }
 
-.buttons{
+.buttons {
     text-align: center;
     display: block;
     width: 50%;
@@ -22,7 +26,7 @@ tr:nth-child(even){
     padding-top: 15px;
 }
 
-input[type=button]{
+input[type=button] {
     width: 40%;
     background-color: #848484;
     color: white;

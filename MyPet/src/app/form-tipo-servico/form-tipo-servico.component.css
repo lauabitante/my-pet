@@ -14,12 +14,12 @@ input[type=button]{
     color: white;
     padding: 10px 0px;
     border: none;
-    border-radius:5px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
 input[type=button]:hover{
-    background-color: #B8B8B8;
+    background-color: lightcoral;
 }
 
 .buttons{
