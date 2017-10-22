@@ -16,6 +16,7 @@ import { TipoServico } from '../tipo-servico';
 export class FormServicosComponent implements OnInit {
   servico: Servico;
   codigo: number;
+  valor:number = 0;
   funcionarios: Funcionario[] = [];
   tipoServicos: TipoServico[] = [];  
 
@@ -54,8 +55,14 @@ export class FormServicosComponent implements OnInit {
       this.funcionarios = this.serviceFuncionario.getFuncionarios();
       this.tipoServicos = this.serviceTiposServico.getTiposServico();
   }
+
+  atualizaValor(valor:number){
+      this.valor = valor;
+
+  }
   cancelar() {
     this.servico = new Servico;
+    this.valor = 0;
   }
   voltar() {
     this.router.navigate(['/tela-cliente']);

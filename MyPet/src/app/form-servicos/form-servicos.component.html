@@ -46,7 +46,8 @@
               id="tipoDeServico"
               [(ngModel)]="servico.tipoServico">
           <option *ngFor="let tpserv of tipoServicos"
-                  [ngValue]="tpserv">
+                  [ngValue]="tpserv"
+                  (click)="atualizaValor(tpserv.valor)">
                   {{tpserv.nome}}
           </option>
       </select>
@@ -57,7 +58,7 @@
              id="valor" 
              name="valor" 
              placeholder="Valor" 
-             [(ngModel)]="servico.valor">
+             value= "R$ {{valor}}"  disabled>
   
       <label for="observacao">Observação</label>
       <input type="text" 
