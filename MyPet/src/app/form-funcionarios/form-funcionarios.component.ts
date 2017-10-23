@@ -15,9 +15,9 @@ export class FormFuncionariosComponent implements OnInit {
   hasError = false;
   
   constructor (
-    private service:CrudFuncionariosService, 
-    private router:Router, 
-    private rota:ActivatedRoute ) { }
+    private service: CrudFuncionariosService, 
+    private router: Router, 
+    private rota: ActivatedRoute ) { }
 
   ngOnInit() {
       this.codigo = this.rota.snapshot.params['cod'];
