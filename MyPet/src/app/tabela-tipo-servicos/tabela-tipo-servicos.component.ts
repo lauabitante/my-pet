@@ -18,7 +18,7 @@ export class TabelaTipoServicosComponent implements OnInit {
   }
 
   adicionar() {
-    this.router.navigate(['/edicao-tipo-servico/:cod']);
+    this.router.navigate(['/novo-tipo-servico']);
   }
 
   remover(tipoServico: TipoServico) {
