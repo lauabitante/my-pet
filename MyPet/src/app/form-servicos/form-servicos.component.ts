@@ -62,9 +62,8 @@ export class FormServicosComponent implements OnInit {
 
   atualizaValor(valor: number) {
       this.valor = valor;
-
   }
-  
+
   cancelar() {
     this.servico = new Servico;
     this.valor = 0;
