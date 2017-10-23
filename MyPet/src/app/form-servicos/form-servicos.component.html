@@ -1,5 +1,7 @@
-<div class="form">
+<div class ="form">
     <form>
+      <header>Cadastro de Atendimento</header>
+
       <label for="cpfCliente">CPF cliente</label>
       <input type ="text" 
              id="cpfCliente" 
@@ -28,30 +30,26 @@
              placeholder="Horário" 
              [(ngModel)]="servico.horario">
 
-      <p>
-
       <label for="funcionario">Funcionário</label>
       <select name="funcionarios"
               id="funcionarios" 
               [(ngModel)]="servico.funcionario">
-          <option *ngFor="let func of funcionarios" 
-                  [ngValue]="func">
-                   {{func.nome}}
-          </option>
+        <option *ngFor="let func of funcionarios" 
+                [ngValue]="func">
+                {{func.nome}}
+        </option>
       </select>               
-      </p>
-      <p>
+
       <label for="tipoDeServico">Tipo de Serviço</label>
       <select name="tipoDeServico"
               id="tipoDeServico"
               [(ngModel)]="servico.tipoServico">
-          <option *ngFor="let tpserv of tipoServicos"
-                  [ngValue]="tpserv"
-                  (click)="atualizaValor(tpserv.valor)">
-                  {{tpserv.nome}}
-          </option>
+      <option *ngFor="let tpserv of tipoServicos"
+              [ngValue]="tpserv"
+              (click)="atualizaValor(tpserv.valor)">
+              {{tpserv.nome}}
+      </option>
       </select>
-      </p>
 
       <label for="valor">Valor</label>
       <input type="text" 
@@ -66,20 +64,23 @@
              name="observcao" 
              placeholder="Observação" 
              [(ngModel)]="servico.observacao">
+      
+      <div class="alert alert-error" role="alert" *ngIf="hasError">
+        <b>Erro:</b> Verifique os campos digitados. 
+      </div>
   
       <div class="buttons">
         <input type="button" 
                (click)="salvarServico()" 
-               value="Salvar">
+               value="SALVAR">
 
         <input type="button" 
                (click)="cancelar()" 
-               value="Cancelar">
-      </div>
-      <div class="buttons">
+               value="LIMPAR">
+
         <input type="button" 
                (click)="voltar()" 
-               value="Voltar">
+               value="VOLTAR">
       </div>
     </form>
   </div>

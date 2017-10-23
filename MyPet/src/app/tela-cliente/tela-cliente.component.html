@@ -1,9 +1,7 @@
 <div class="nav">
   <nav>
     <a routerLink="/index">Home</a>      
-    <!-- <a routerLink="/lista-tipo-servicos">Nossos Serviços</a> -->
     <a routerLink="/form-servicos">Agende um Serviço</a>
-    <a>Cadastre-se</a>
   </nav>
   <br>
 </div>
@@ -11,11 +9,11 @@
     <table border="5">
       <tr>
         <td>Nossos Serviços:</td>
-        <td>Valores         </td>
+        <td>Valores</td>
       </tr>
       <tr *ngFor='let lista of tiposServico'>
         <td>{{lista.nome}}</td>
-        <td>R$ {{lista.valor}}</td>
+        <td>{{lista.valor | moeda}}</td>
       </tr>
       
     </table> 
