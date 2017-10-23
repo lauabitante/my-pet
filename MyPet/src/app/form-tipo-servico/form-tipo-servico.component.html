@@ -20,6 +20,10 @@
              name="valor" 
              placeholder="Valor" 
              [(ngModel)]="tipoServico.valor">
+
+      <div class="alert alert-error" role="alert" *ngIf="hasError">
+        <b>Erro:</b> Verifique os campos digitados. 
+      </div>
   
       <div class="buttons">
         <input type="button" 
@@ -29,8 +33,7 @@
         <input type="button" 
                (click)="cancelar()" 
                value="LIMPAR">
-      </div>
-      <div class="buttons">
+       
         <input type="button" 
                (click)="voltar()" 
                value="VOLTAR">

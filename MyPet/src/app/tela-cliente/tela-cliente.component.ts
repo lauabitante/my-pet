@@ -16,5 +16,4 @@ export class TelaClienteComponent implements OnInit {
   ngOnInit() {
       this.tiposServico = this.serviceTiposServico.getTiposServico();
   }
-
 }

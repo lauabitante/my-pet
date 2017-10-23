@@ -13,7 +13,7 @@ export class CrudTiposServicoService {
     {
       codigo: 2,
       nome: "Banho",
-      descricao: "Seu pet sai cheroso e sequinho do nosso banho com produtos....",
+      descricao: "Seu pet sai cheiroso e sequinho do nosso banho com produtos....",
       valor: 20.0
     }
   ];
