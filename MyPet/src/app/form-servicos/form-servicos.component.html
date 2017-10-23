@@ -7,6 +7,7 @@
              id="cpfCliente" 
              name="cpfCliente" 
              placeholder="CPF" 
+             mascara="999.999.999-99"
              [(ngModel)]="servico.cpfCliente">
   
       <label for="nomePet">Nome do Pet</label>
@@ -20,7 +21,8 @@
       <input type="text" 
              id="dia" 
              name="dia" 
-             placeholder="Dia" 
+             placeholder="Dia"
+             mascara="99/99/9999" 
              [(ngModel)]="servico.dia">
   
       <label for="horario">Horário</label>

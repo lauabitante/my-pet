@@ -5,11 +5,12 @@
   </nav>
   <br>
 </div>
-  <div class="divListas">
-    <table border="5">
+  <div class="table">
+    <table>
+      <header>Nossos Serviços:</header> 
       <tr>
-        <td>Nossos Serviços:</td>
-        <td>Valores</td>
+        <td>SERVIÇO</td>
+        <td>VALORES</td>
       </tr>
       <tr *ngFor='let lista of tiposServico'>
         <td>{{lista.nome}}</td>
@@ -18,12 +19,3 @@
       
     </table> 
   </div> 
-  <br>
-  <div>
-    <a routerLink="/form-servicos">Agendar</a>
-  </div>
-  <div>
-    <p>
-      <a routerLink="/index">Voltar</a>
-    </p>
-  </div>
