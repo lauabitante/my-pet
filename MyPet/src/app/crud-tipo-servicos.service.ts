@@ -17,7 +17,7 @@ export class CrudTiposServicoService {
       valor: 20.0
     }
   ];
-    autoIncrement: number = 3;
+    autoIncrement: number = 1;
 
   constructor() { 
   }

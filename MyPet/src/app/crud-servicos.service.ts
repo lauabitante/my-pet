@@ -6,18 +6,18 @@ import {TipoServico } from './tipo-servico';
 @Injectable()
 export class CrudServicosService {
   servicos: Servico[] = [
-    {
-        codigo: 1, 
-        cpfCliente: "Banho", 
-        nomePet: "Totó", 
-        dia: "01/01/2008", 
-        horario: "12:00", 
-        funcionario: new Funcionario(), 
-        tipoServico: new TipoServico(), 
-        valorServico: 30.0, 
-        observacao: "Alergia", 
-        status: false
-    }
+    // {
+    //     codigo: 1, 
+    //     cpfCliente: "Banho", 
+    //     nomePet: "Totó", 
+    //     dia: "01/01/2008", 
+    //     horario: "12:00", 
+    //     funcionario: new Funcionario(), 
+    //     tipoServico: new TipoServico(), 
+    //     valorServico: 30.0, 
+    //     observacao: "Alergia", 
+    //     status: false
+    // }
   ];
 
   autoIncrement: number = 2;
