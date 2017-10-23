@@ -24,10 +24,6 @@ td, th {
     padding:8px;
 }
 
-td:a{
-    text-align: center;
-}
-
 tr:nth-child(even) {
     background-color: #F2F2F2;
 }
