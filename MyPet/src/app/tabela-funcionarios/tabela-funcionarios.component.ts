@@ -17,6 +17,7 @@ export class TabelaFuncionariosComponent implements OnInit {
 
   ngOnInit() {
         this.funcionarios = this.service.getFuncionarios();
+        console.log(this.funcionarios.length)
   }
 
   adicionar() {
