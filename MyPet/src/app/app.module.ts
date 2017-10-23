@@ -39,7 +39,8 @@ const routes: Routes = [
   { path: 'form-servicos', component: FormServicosComponent },
   { path: 'lista-servicos', component: TabelaServicosComponent },
   { path: 'edicao-servico/:cod', component: FormServicosComponent },
-  { path: '**', redirectTo: 'page-not-found', component: PageNotFoundComponent }
+  { path: 'page-not-found', component: PageNotFoundComponent },
+  { path: '**', redirectTo: 'page-not-found', pathMatch:"full" }
 ];
 
 @NgModule({
