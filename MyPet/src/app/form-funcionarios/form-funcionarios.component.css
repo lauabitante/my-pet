@@ -1,3 +1,11 @@
+header {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: lighter;
+    padding-bottom: 35px;
+    color: rgb(199, 111, 111);
+}
+
 .form {
     padding-top: 35px;
 }
@@ -31,7 +39,8 @@ input[type=text] {
 }
 
 input[type=button] {
-    width: 40%;
+    width: 150px;
+    margin: 2px;
     background-color: #848484;
     color: white;
     padding: 10px 0px;
@@ -42,4 +51,28 @@ input[type=button] {
 
 input[type=button]:hover {
     background-color: lightcoral;
+}
+
+.alert {
+    padding: 16px 35px 16px 14px;
+    margin-bottom: 18px;
+    color: #c09853;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    background-color: #fcf8e3;
+    border: 1px solid #fbeed5;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    font-weight: normal;
+    }
+    
+.alert-heading {
+    color: inherit;
+}
+
+.alert-danger,
+.alert-error {
+color: #b94a48;
+background-color: #f2dede;
+border-color: #eed3d7;
 }
