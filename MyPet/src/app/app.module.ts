@@ -20,6 +20,7 @@ import { TabelaServicosComponent } from './tabela-servicos/tabela-servicos.compo
 import { FormTipoServicoComponent } from './form-tipo-servico/form-tipo-servico.component';
 import { MoedaPipe } from './moeda.pipe';
 import { MascaraDirective } from './mascara.directive';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'index', pathMatch: 'full' },
@@ -37,7 +38,8 @@ const routes: Routes = [
   { path: 'lista-tipos-servico', component: TabelaTipoServicosComponent },
   { path: 'form-servicos', component: FormServicosComponent },
   { path: 'lista-servicos', component: TabelaServicosComponent },
-  { path: 'edicao-servico/:cod', component: FormServicosComponent }
+  { path: 'edicao-servico/:cod', component: FormServicosComponent },
+  { path: '**', redirectTo: 'page-not-found', component: PageNotFoundComponent }
 ];
 
 @NgModule({
@@ -55,7 +57,8 @@ const routes: Routes = [
     TabelaServicosComponent,
     FormTipoServicoComponent,
     MoedaPipe,
-    MascaraDirective    
+    MascaraDirective,
+    PageNotFoundComponent    
   ],
   imports: [
     BrowserModule,
