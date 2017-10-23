@@ -8,14 +8,14 @@ export class CrudServicosService {
   servicos: Servico[] = [
     {
         codigo: 1, 
-        cpfCliente: "teste", 
-        nomePet: "123.456.789-10", 
-        dia: "1234-5678", 
-        horario: "25/12/1994", 
+        cpfCliente: "Banho", 
+        nomePet: "Totó", 
+        dia: "01/01/2008", 
+        horario: "12:00", 
         funcionario: new Funcionario(), 
         tipoServico: new TipoServico(), 
-        valorServico: 30, 
-        observacao: "", 
+        valorServico: 30.0, 
+        observacao: "Alergia", 
         status: false
     }
   ];

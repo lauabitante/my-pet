@@ -1,35 +1,44 @@
-<h3>{{title}}</h3>
-<table>
-  <tr>
-    <th>Código</th> 
-    <th>CPF do Cliente</th> 
-    <th>Nome do Pet</th> 
-    <th>Dia</th>
-    <th>Horário</th>
-    <th>Nome do Funcionário</th>
-    <th>Tipo do serviço</th>
-    <th>Valor do serviço</th> 
-    <th>Observação</th> 
-    <th>Status</th> 
-    <th>Editar</th>
-    <th>Remover</th>
-  </tr>
-  <tr *ngFor='let servico of servicos'>          
-    <td>{{servico.codigo}}</td> 
-    <td>{{servico.cpfCliente}}</td>
-    <td>{{servico.nomePet}}</td> 
-    <td>{{servico.dia}}</td>    
-    <td>{{servico.horario}}</td>    
-    <td>{{servico.funcionario.nome}}</td>  
-    <td>{{servico.tipoServico.nome}}</td>    
-    <td>{{servico.tipoServico.valor}}</td>    
-    <td>{{servico.observacao}}</td>    
-    <td>{{servico.status}}</td>    
-
-    <td><a [routerLink]="['/edicao-servico', servico.codigo]">Editar</a></td>
-    <td><a routerLink="/lista-servicos" (click)="remover(servico)">Remover</a></td>
-  </tr>
-</table>
+<div class="table">
+    <header>Lista de Atendimentos</header>
+    <table>
+      <tr>
+        <th>Código</th> 
+        <th>CPF do Cliente</th> 
+        <th>Nome do Pet</th> 
+        <th>Dia</th>
+        <th>Horário</th>
+        <th>Nome do Funcionário</th>
+        <th>Tipo do Serviço</th>
+        <th>Valor do Serviço</th> 
+        <th>Observação</th> 
+        <th>Status</th> 
+        <th>Editar</th>
+        <th>Remover</th>
+      </tr>
+      <tr *ngFor='let servico of servicos'>          
+        <td>{{servico.codigo}}</td> 
+        <td>{{servico.cpfCliente}}</td>
+        <td>{{servico.nomePet}}</td> 
+        <td>{{servico.dia}}</td>    
+        <td>{{servico.horario}}</td>    
+        <td>{{servico.funcionario.nome}}</td>  
+        <td>{{servico.tipoServico.nome}}</td>    
+        <td>{{servico.tipoServico.valor | moeda}}</td>    
+        <td>{{servico.observacao}}</td>    
+        <td>{{servico.status}}</td>
+        <td>
+          <a [routerLink]="['/edicao-servico', servico.codigo]">
+            <img class="icons" src="../assets/icon-edit.png" alt="Editar"/>
+          </a>
+        </td>
+        <td>
+          <a routerLink="/lista-servicos" (click)="remover(servico)">
+            <img class="icons" src="../assets/icon-delete.png" alt="Remover"/>
+          </a>
+        </td>
+      </tr>
+    </table>
+</div>
 <div class="buttons">
   <input type="button" (click)="voltar()" value="VOLTAR">
 </div>    

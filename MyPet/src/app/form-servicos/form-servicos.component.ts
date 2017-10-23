@@ -16,9 +16,10 @@ import { TipoServico } from '../tipo-servico';
 export class FormServicosComponent implements OnInit {
   servico: Servico;
   codigo: number;
-  valor:number = 0;
+  valor: number = 0;
   funcionarios: Funcionario[] = [];
   tipoServicos: TipoServico[] = [];  
+  hasError = false;  
 
   constructor (
     private service: CrudServicosService,
@@ -39,16 +40,19 @@ export class FormServicosComponent implements OnInit {
   }
   
   salvarServico() { 
-      if (isNaN(this.codigo)) {
+      if (isNaN(this.codigo) && this.validaCampos()) {
       this.service.adicionarServico(this.servico);
       this.servico = new Servico();
-    } else {
+      this.router.navigate(['/tela-cliente']);      
+    } else if (this.validaCampos()) {
       this.service.atualizaServico(this.codigo, this.servico);
+      this.router.navigate(['/tela-cliente']);      
+    } else {
+      this.hasError = true;
     }
-    this.router.navigate(['/tela-cliente']);
   }
 
-  iniciarServico(){
+  iniciarServico() {
       this.servico = new Servico();
       this.servico.funcionario = new Funcionario();
       this.servico.tipoServico = new TipoServico();
@@ -56,15 +60,27 @@ export class FormServicosComponent implements OnInit {
       this.tipoServicos = this.serviceTiposServico.getTiposServico();
   }
 
-  atualizaValor(valor:number){
+  atualizaValor(valor: number) {
       this.valor = valor;
-
   }
+
   cancelar() {
     this.servico = new Servico;
     this.valor = 0;
+    this.hasError = false;
   }
+  
   voltar() {
     this.router.navigate(['/tela-cliente']);
+  }
+
+  validaCampos() {
+    return this.servico != null 
+           && this.servico.cpfCliente != "" && this.servico.cpfCliente != null
+           && this.servico.dia != "" && this.servico.dia != null 
+           && this.servico.horario && this.servico.horario != null
+           && this.servico.nomePet != "" && this.servico.nomePet != null
+           && this.servico.tipoServico != null    
+           && this.servico.funcionario != null       
   }
 }

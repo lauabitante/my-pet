@@ -1,31 +1,21 @@
 <div class="nav">
   <nav>
     <a routerLink="/index">Home</a>      
-    <!-- <a routerLink="/lista-tipo-servicos">Nossos Serviços</a> -->
     <a routerLink="/form-servicos">Agende um Serviço</a>
-    <a>Cadastre-se</a>
   </nav>
   <br>
 </div>
-  <div class="divListas">
-    <table border="5">
+  <div class="table">
+    <table>
+      <header>Nossos Serviços:</header> 
       <tr>
-        <td>Nossos Serviços:</td>
-        <td>Valores         </td>
+        <td>SERVIÇO</td>
+        <td>VALORES</td>
       </tr>
       <tr *ngFor='let lista of tiposServico'>
         <td>{{lista.nome}}</td>
-        <td>R$ {{lista.valor}}</td>
+        <td>{{lista.valor | moeda}}</td>
       </tr>
       
     </table> 
   </div> 
-  <br>
-  <div>
-    <a routerLink="/form-servicos">Agendar</a>
-  </div>
-  <div>
-    <p>
-      <a routerLink="/index">Voltar</a>
-    </p>
-  </div>

@@ -1,4 +1,34 @@
-input[type=text]{
+header {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    font-weight: lighter;
+    padding-bottom: 35px;
+    color: rgb(199, 111, 111);
+}
+
+.form {
+    padding-top: 35px;
+}
+
+form {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: gray;
+    border-radius: 4px;
+    background-color: #F2F2F2;
+    padding: 20px;
+}
+
+.buttons {
+    text-align: center;
+    display: block;
+    width: 50%;
+    margin: auto;
+    padding-top: 15px;
+}
+
+input[type=text] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -8,8 +38,9 @@ input[type=text]{
     box-sizing: border-box;
 }
 
-input[type=button]{
-    width: 40%;
+input[type=button] {
+    width: 150px;
+    margin: 2px;
     background-color: #848484;
     color: white;
     padding: 10px 0px;
@@ -18,20 +49,30 @@ input[type=button]{
     cursor: pointer;
 }
 
-input[type=button]:hover{
+input[type=button]:hover {
     background-color: lightcoral;
 }
 
-.buttons{
-    text-align: center;
-    display: block;
-    width: 50%;
-    margin: auto;
-    padding-top: 15px;
+.alert {
+    padding: 16px 35px 16px 14px;
+    margin-bottom: 18px;
+    color: #c09853;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    background-color: #fcf8e3;
+    border: 1px solid #fbeed5;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    font-weight: normal;
+    }
+    
+.alert-heading {
+    color: inherit;
 }
 
-.form{
-    border-radius: 4px;
-    background-color: #F2F2F2;
-    padding: 20px;
+.alert-danger,
+.alert-error {
+    color: #b94a48;
+    background-color: #f2dede;
+    border-color: #eed3d7;
 }

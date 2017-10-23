@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router} from '@angular/router';
+import { Router } from '@angular/router';
 import { Funcionario } from "../funcionario";
 import { CrudFuncionariosService } from "../crud-funcionarios.service";
 

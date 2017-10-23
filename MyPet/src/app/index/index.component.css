@@ -1,5 +1,6 @@
 .main {
     width: 100%;
+    padding-top: 200px;;
 }
 
 .option {
@@ -9,14 +10,12 @@
 }
 
 a {
-    color: purple;
+    color: gray;
     font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    font-size: 24px;
 }
 
-header {
-    background-color: green;
-}
-
-.intro {
-    padding: 50px;
+a:hover {
+    color: lightcoral;
 }
