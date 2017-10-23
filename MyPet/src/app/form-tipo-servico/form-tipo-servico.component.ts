@@ -13,6 +13,7 @@ export class FormTipoServicoComponent implements OnInit {
 
   tipoServico: TipoServico;
   codigo: number;
+  hasError = false;    
 
   constructor (
     private service: CrudTiposServicoService, 
@@ -30,20 +31,31 @@ export class FormTipoServicoComponent implements OnInit {
   }
 
   salvarTipoServico() { 
-      if (isNaN(this.codigo)) {
+      if (isNaN(this.codigo) && this.validaCampos()) {
       this.service.adicionarTipoServico(this.tipoServico);
       this.tipoServico = new TipoServico();
-    } else {
+      this.router.navigate(['/lista-tipos-servico']);
+    } else if (this.validaCampos()) {
       this.service.atualizarTipoServico(this.codigo, this.tipoServico);
+      this.router.navigate(['/lista-tipos-servico']);
+    } else {
+      this.hasError = true;
     }
-    this.router.navigate(['/lista-tipos-servico']);
   }
 
   cancelar() {
     this.tipoServico = new TipoServico;
+    this.hasError = false;          
   }
 
   voltar() {
     this.router.navigate(['/lista-tipos-servico']);
+  }
+
+  validaCampos() {
+    return this.tipoServico != null 
+           && this.tipoServico.nome != "" && this.tipoServico.nome != null 
+           && this.tipoServico.descricao != "" && this.tipoServico.descricao != null
+           && this.tipoServico.valor != 0 && this.tipoServico.valor != null
   }
 }

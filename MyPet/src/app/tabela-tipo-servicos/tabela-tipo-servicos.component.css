@@ -1,5 +1,15 @@
+header {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    font-weight: lighter;
+    padding-bottom: 35px;
+    color: rgb(199, 111, 111);
+}
+
 table {
-    font-family: arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: gray;
     border-collapse: collapse;
     width: 100%;
 }
@@ -34,4 +44,12 @@ input[type=button] {
     border: none;
     border-radius:5px;
     cursor: pointer;
+}
+
+input[type=button]:hover{
+    background-color: lightcoral;
+}
+
+.icons {
+    width: 20px;
 }

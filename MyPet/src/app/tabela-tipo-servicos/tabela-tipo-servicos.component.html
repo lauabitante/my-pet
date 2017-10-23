@@ -1,16 +1,29 @@
 <div class="table">
+  <header>Lista de Serviços</header>
   <table>
     <tr>
       <th>Código</th>
       <th>Nome do serviço</th> 
       <th>Descrição</th> 
       <th>Valor</th> 
-      </tr>
+      <th>Editar</th> 
+      <th>Remover</th>
+    </tr>
     <tr *ngFor='let tipoServico of tiposServico'>          
       <td>{{tipoServico.codigo}}</td> 
       <td>{{tipoServico.nome}}</td>
       <td>{{tipoServico.descricao}}</td>
       <td>{{tipoServico.valor | moeda}}</td> 
+      <td>
+          <a [routerLink]="['/edicao-tipo-servico', tipoServico.codigo]">
+              <img class="icons" src="../assets/icon-edit.png" alt="Editar"/>
+          </a>
+      </td>
+      <td>
+          <a routerLink="/lista-tipos-servico" (click)="remover(tipoServico)">
+              <img class="icons" src="../assets/icon-delete.png" alt="Remover"/>
+          </a>
+      </td>
     </tr>
   </table>
 </div>
