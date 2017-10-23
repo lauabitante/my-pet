@@ -4,10 +4,10 @@ import { Funcionario } from './funcionario';
 @Injectable()
 export class CrudFuncionariosService {
   funcionarios: Funcionario[] = [
-      {codigo:1, nome:"teste", cpf:"123.456.789-10", telefone:"1234-5678", dataNascimento:"25/12/1994", especialidade: "veterinário" }
+      
 
   ];
-  autoIncrement: number = 2;
+  autoIncrement: number = 1;
   constructor() {
         if(!localStorage.getItem("funcionarios")){
                 localStorage.setItem("funcionarios",JSON.stringify(this.funcionarios))
@@ -33,7 +33,7 @@ export class CrudFuncionariosService {
     removerFuncionario(funcionario: Funcionario) {
         let indice = this.funcionarios.indexOf(funcionario, 0);
         if (indice >- 1) {
-            localStorage.removeItem('jogadores');
+            localStorage.removeItem('funcionarios');
             this.funcionarios.splice(indice, 1);
         }
     }

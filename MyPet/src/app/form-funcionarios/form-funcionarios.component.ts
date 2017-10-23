@@ -54,7 +54,7 @@ export class FormFuncionariosComponent implements OnInit {
     return this.funcionario != null 
            && this.funcionario.nome != "" && this.funcionario.nome != null 
            && this.funcionario.cpf != "" && this.funcionario.cpf != null 
-           && this.funcionario.dataNascimento != "" && this.funcionario.dataNascimento != null
+           && this.funcionario.dataNascimento != null
            && this.funcionario.especialidade != "" && this.funcionario.especialidade != null
            && this.funcionario.telefone != "" && this.funcionario.telefone != null
   }
