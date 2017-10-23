@@ -8,8 +8,15 @@ export class CrudFuncionariosService {
 
   ];
   autoIncrement: number = 2;
-  constructor() { }
+  constructor() {
+        if(!localStorage.getItem("funcionarios")){
+                localStorage.setItem("funcionarios",JSON.stringify(this.funcionarios))
+        }
+    }
     getFuncionarios() {
+         if(localStorage.getItem("funcionarios")){
+                this.funcionarios = JSON.parse(localStorage.getItem("funcionarios"));
+         }
         return this.funcionarios;
     }
 
@@ -19,12 +26,14 @@ export class CrudFuncionariosService {
 
     adicionarFuncionario(funcionario: Funcionario) {
         funcionario.codigo = this.autoIncrement++;
-        this.funcionarios.push(funcionario);  
+        this.funcionarios.push(funcionario); 
+        localStorage.setItem("funcionarios",JSON.stringify(this.funcionarios)); 
     }
 
     removerFuncionario(funcionario: Funcionario) {
         let indice = this.funcionarios.indexOf(funcionario, 0);
         if (indice >- 1) {
+            localStorage.removeItem('jogadores');
             this.funcionarios.splice(indice, 1);
         }
     }
@@ -32,5 +41,6 @@ export class CrudFuncionariosService {
     atualizaFuncionario(codigo: number, funcionario: Funcionario) {
         let indice = this.funcionarios.indexOf(this.getFuncionarioPorCodigo(codigo), 0);
         this.funcionarios[indice] = funcionario;
+        localStorage.setItem("funcionarios",JSON.stringify(this.funcionarios));
     }
 }
