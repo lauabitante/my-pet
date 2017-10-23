@@ -3,10 +3,25 @@ import { Funcionario } from './funcionario';
 
 @Injectable()
 export class CrudFuncionariosService {
-  funcionarios: Funcionario[] = [
-      {codigo:1, nome:"teste", cpf:"123.456.789-10", telefone:"1234-5678", dataNascimento:"25/12/1994", especialidade: "veterinário" }
-
+    funcionarios: Funcionario[] = [
+        {
+            codigo:1, 
+            nome:"João da Silva", 
+            cpf:"123.456.789-10", 
+            telefone:"91234-5678", 
+            dataNascimento:"25/12/1994", 
+            especialidade: "Tosa Canina" 
+        },
+        {
+            codigo:2, 
+            nome:"Maria Souza", 
+            cpf:"109.987.654-32", 
+            telefone:"99876-5432", 
+            dataNascimento:"01/04/1990", 
+            especialidade: "Veterinário" 
+        }
   ];
+
   autoIncrement: number = 2;
   constructor() {
         if(!localStorage.getItem("funcionarios")){

@@ -7,13 +7,13 @@ export class CrudTiposServicoService {
     {
       codigo: 1, 
       nome: "Tosa",
-      descricao: "Banho no seu pet com aparação dos pelos conforme pedido do cliente", 
+      descricao: "Banho no seu pet com aparação dos pêlos", 
       valor: 40.0
     },
     {
       codigo: 2,
       nome: "Banho",
-      descricao: "Seu pet sai cheiroso e sequinho do nosso banho com produtos....",
+      descricao: "Seu pet sai cheiroso e sequinho do nosso banho com produtos dermatológicos especiais",
       valor: 20.0
     }
   ];
