@@ -3,8 +3,7 @@
       <header>Cadastro de Funcionário</header> 
 
       <label for="nome">Nome</label>
-      <input class="form-control form-control-sm" 
-             type ="text" 
+      <input type ="text" 
              id="nome" 
              name="nome" 
              placeholder="Nome" 
@@ -32,8 +31,7 @@
              name="dataNascimento" 
              placeholder="Data de Nascimento" 
              mascara="99/99/9999"
-             [(ngModel)]="funcionario.dataNascimento"
-             >
+             [(ngModel)]="funcionario.dataNascimento">
   
       <label for="especialidade">Especialidade</label>
       <input type="text" 

@@ -1,5 +1,5 @@
-<!-- <h3>{{title}}</h3> -->
 <div class="table">
+    <header>Lista de Clientes</header>         
     <table>
         <tr>
           <th>Codigo</th> 
@@ -16,8 +16,16 @@
             <td>{{cliente.cpf}}</td> 
             <td>{{cliente.telefone}}</td>    
             <td>{{cliente.email}}</td>    
-            <td><a [routerLink]="['/edicaoCliente', cliente.codigo]">Editar</a></td>
-            <td><a routerLink="/lista-clientes" (click)="remover(cliente)">Remover</a></td>
+            <td>
+                <a [routerLink]="['/edicao-cliente', cliente.codigo]">
+                    <img class="icons" src="../assets/icon-edit.png" alt="Editar"/>
+                </a>
+            </td>
+            <td>
+                <a routerLink="/lista-clientes" (click)="remover(cliente)">
+                    <img class="icons" src="../assets/icon-delete.png" alt="Remover"/>
+                </a>
+            </td>
          </tr>       
   </table>
 </div>
