@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 import { Cliente } from '../cliente';
 import { CrudClientesService } from '../crud-clientes.service';
@@ -14,10 +15,13 @@ export class TabelaClientesComponent implements OnInit {
   clientes: Cliente[] = [];
   constructor (
     private service: CrudClientesService, 
-    private router: Router ) { }
+    private router: Router,
+    private http: HttpClient ) { }
 
   ngOnInit() {
-        this.clientes = this.service.getClientes();
+    this.http.get<Cliente[]>('https://mypet-backend.herokuapp.com/webresources/clientes').subscribe(clientes => {
+      this.clientes = clientes;
+    });
   }
 
   adicionar() {

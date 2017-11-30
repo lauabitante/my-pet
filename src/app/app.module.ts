@@ -21,6 +21,7 @@ import { FormTipoServicoComponent } from './form-tipo-servico/form-tipo-servico.
 import { MoedaPipe } from './moeda.pipe';
 import { MascaraDirective } from './mascara.directive';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   { path: '', redirectTo: 'index', pathMatch: 'full' },
@@ -63,6 +64,7 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     RouterModule.forRoot(routes)
   ],
