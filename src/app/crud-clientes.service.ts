@@ -1,22 +1,26 @@
 import { Injectable } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
 import { Cliente } from './cliente'
 @Injectable()
 export class CrudClientesService {
 
  clientes: Cliente[] = [
       {codigo:1, nome:"Teste", cpf:"123.456.789-10", telefone:"1234-5678", email:"teste@teste.com" }
-
   ];
+
+
   autoIncrement: number = 2;
-  constructor() { }
+  constructor(private http: HttpClient) { }
     getClientes(){
         return this.clientes;
     }
 
     adicionarCliente(cliente: Cliente) {
         cliente.codigo=this.autoIncrement++;
-        this.clientes.push(cliente);  
+
+        this.http.post('https://mypet-backend.herokuapp.com/webresources/clientes', cliente).subscribe(response => {
+            this.clientes.push(cliente);  
+        });
     }
 
     getClientePorCodigo(codigo: number) {
