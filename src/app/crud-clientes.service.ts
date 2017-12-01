@@ -24,23 +24,24 @@ export class CrudClientesService {
     }
 
     getClientePorCodigo(codigo: number) {
-        return(this.clientes.find(cliente => cliente.codigo==codigo));
+        return new Promise<Cliente>(function(resolve, reject) {
+            return this.http.get(this.urlClientes+codigo).subscribe(response => {
+                return resolve(response[0])
+            });
+        })
     }
 
     removerCliente(cliente: Cliente) {
         this.http.get(this.urlClientes+cliente.cpf).subscribe(cliente => {
-            console.log("CLIENTE:", cliente);
-            this.http.delete(this.urlClientes+cliente['codCliente']).subscribe(result => { 
-                console.log("DELETE RESPONSE", result)
-            });
+            this.http.delete(this.urlClientes+cliente['codCliente']).subscribe(result => { });
         });
     }
 
     atualizaCliente(codigo:number, cliente: Cliente) {
-        let indice = this.clientes.indexOf(this.getClientePorCodigo(codigo), 0);
-        console.log("CLIENTE:", cliente);
-        this.http.put<Cliente>(this.urlClientes+cliente.codigo, cliente).subscribe(cliente => { 
-            this.clientes[indice] = cliente;
+        this.getClientePorCodigo(codigo).then(cliente => {
+            this.http.put<Cliente>(this.urlClientes+cliente['codigo'], cliente).subscribe(cliente => { 
+                // this.clientes[indice] = cliente;
+            })
         });
     }
 }

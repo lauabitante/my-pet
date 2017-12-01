@@ -26,7 +26,11 @@ export class FormClientesComponent implements OnInit {
       if (isNaN(this.codigo)) {
             this.cliente = new Cliente();
       } else {
-            this.cliente = Object.assign({},this.service.getClientePorCodigo(this.codigo));
+            console.log('getClientePorCodigo ---', this.codigo);
+            this.service.getClientePorCodigo(this.codigo).then(cliente => {
+                  console.log('getClientePorCodigo ---', cliente);
+                  this.cliente = cliente;
+            });
       }
   }
 
