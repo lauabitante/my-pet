@@ -26,9 +26,7 @@ export class FormClientesComponent implements OnInit {
       if (isNaN(this.codigo)) {
             this.cliente = new Cliente();
       } else {
-            console.log('getClientePorCodigo ---', this.codigo);
-            this.service.getClientePorCodigo(this.codigo).then(cliente => {
-                  console.log('getClientePorCodigo ---', cliente);
+            this.service.getClientePorCodigo(this.codigo).subscribe(cliente => {
                   this.cliente = cliente;
             });
       }
@@ -36,12 +34,19 @@ export class FormClientesComponent implements OnInit {
 
   salvarCliente() {
       if (isNaN(this.codigo) && this.validaCampos()) {
-            this.service.adicionarCliente(this.cliente);
-            this.cliente = new Cliente();
-            this.router.navigate(['/lista-clientes']);            
+            this.service.adicionarCliente(this.cliente).subscribe(
+                  res => { 
+                        this.router.navigate(['/lista-clientes']); 
+                  },
+                  erro => { console.log(erro) }
+            );  
       } else if (this.validaCampos()) {
-            this.service.atualizaCliente(this.codigo, this.cliente);
-            this.router.navigate(['/lista-clientes']);         
+            this.service.atualizaCliente(this.cliente.codCliente, this.cliente).subscribe(
+                  res => { 
+                        this.router.navigate(['/lista-clientes']); 
+                  },
+                  erro => { console.log(erro) }
+            )       
       } else {
             this.hasError = true;
       }

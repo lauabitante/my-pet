@@ -56,7 +56,10 @@ export class FormServicosComponent implements OnInit {
       this.servico = new Servico();
       this.servico.funcionario = new Funcionario();
       this.servico.tipoServico = new TipoServico();
-      this.funcionarios = this.serviceFuncionario.getFuncionarios();
+      this.serviceFuncionario.getFuncionarios().subscribe(
+        funcionarios => { this.funcionarios = funcionarios; },
+        erro => { console.log(erro); }
+      )
       this.tipoServicos = this.serviceTiposServico.getTiposServico();
   }
 

@@ -24,18 +24,28 @@ export class FormFuncionariosComponent implements OnInit {
       if (isNaN(this.codigo)) {
         this.funcionario = new Funcionario();
       } else {
-        this.funcionario = Object.assign({},this.service.getFuncionarioPorCodigo(this.codigo));
+        this.service.getFuncionarioPorCodigo(this.codigo).subscribe(funcionario => {
+              this.funcionario = funcionario;
+        });
       }
   }
 
   salvarFuncionario() {
     if (isNaN(this.codigo) && this.validaCampos()) {
-      this.service.adicionarFuncionario(this.funcionario);
-      this.funcionario = new Funcionario();
-      this.router.navigate(['/lista-funcionarios']);
+      this.service.adicionarFuncionario(this.funcionario).subscribe(
+        res => { 
+              this.router.navigate(['/lista-funcionarios']); 
+        },
+        erro => { console.log(erro) }
+  );  
+
     } else if (this.validaCampos()) {
-      this.service.atualizaFuncionario(this.codigo, this.funcionario);
-      this.router.navigate(['/lista-funcionarios']);
+      this.service.atualizaFuncionario(this.codigo, this.funcionario).subscribe(
+        res => { 
+              this.router.navigate(['/lista-funcionarios']); 
+        },
+        erro => { console.log(erro) }
+  ) 
     } else {
       this.hasError = true;
     }

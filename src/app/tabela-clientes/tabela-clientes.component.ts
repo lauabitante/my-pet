@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-
 import { Cliente } from '../cliente';
 import { CrudClientesService } from '../crud-clientes.service';
 
@@ -15,13 +13,17 @@ export class TabelaClientesComponent implements OnInit {
   clientes: Cliente[] = [];
   constructor (
     private service: CrudClientesService, 
-    private router: Router,
-    private http: HttpClient ) { }
+    private router: Router) { }
 
   ngOnInit() {
-    this.http.get<Cliente[]>('https://mypet-backend.herokuapp.com/webresources/clientes').subscribe(clientes => {
-      this.clientes = clientes;
-    });
+    this.loadClientes()
+  }
+
+  loadClientes() {
+    this.service.getClientes().subscribe(
+      clientes => { this.clientes = clientes; },
+      erro => { console.log(erro); }
+    )
   }
 
   adicionar() {
@@ -29,7 +31,12 @@ export class TabelaClientesComponent implements OnInit {
   }
 
   remover(cliente: Cliente) {
-    this.service.removerCliente(cliente);
+    this.service.removerCliente(cliente).subscribe(
+      result => { 
+        this.loadClientes()
+       },
+      erro => { console.log(erro); }
+    )
   }
 
   voltar() {
