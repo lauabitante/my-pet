@@ -14,7 +14,10 @@ export class TabelaTipoServicosComponent implements OnInit {
   constructor(private service: CrudTiposServicoService,private router:Router) { }
 
   ngOnInit() {
-      this.tiposServico = this.service.getTiposServico();
+      this.service.getTipoServico().subscribe(
+        tiposServico => { this.tiposServico = tiposServico; },
+      erro => { console.log(erro); }
+    )
   }
 
   adicionar() {
@@ -22,7 +25,12 @@ export class TabelaTipoServicosComponent implements OnInit {
   }
 
   remover(tipoServico: TipoServico) {
-    this.service.removerTipoServico(tipoServico);
+    this.service.removerTipoServico(tipoServico).subscribe (
+      result => { 
+        // Atualizar a tela
+       },
+      erro => { console.log(erro); }
+    )
   }
 
   voltar() {

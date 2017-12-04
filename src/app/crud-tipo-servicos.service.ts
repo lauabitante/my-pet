@@ -1,49 +1,48 @@
 import { Injectable } from '@angular/core';
 import { TipoServico } from './tipo-servico';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import { Observable } from 'rxjs/RX';
 
 @Injectable()
 export class CrudTiposServicoService {
-  tiposServico: TipoServico[] = [
-    {
-      codigo: 1, 
-      nome: "Tosa",
-      descricao: "Banho no seu pet com aparação dos pêlos", 
-      valor: 40.0
-    },
-    {
-      codigo: 2,
-      nome: "Banho",
-      descricao: "Seu pet sai cheiroso e sequinho do nosso banho com produtos dermatológicos especiais",
-      valor: 20.0
-    }
-  ];
-    autoIncrement: number = 1;
+  tiposServico: TipoServico[] = [];  
 
-  constructor() { 
+  urlTiposServico = 'https://mypet-backend.herokuapp.com/webresources/lista-tipos-servico/'; //verificar endpoint
+  
+  autoIncrement: number = 1;
+
+  constructor(private http: Http) { }
+
+  getTipoServico(): Observable<TipoServico[]>  {     
+    return this.http.get(this.urlTiposServico)
+    .map((res: Response) => res.json())
+    .catch((erro:any) => Observable.throw(erro));
   }
   
-  getTiposServico() {
-    return this.tiposServico;
+  getTipoServicoPorCodigo(codigo: number): Observable<TipoServico> {
+    return this.http.get(this.urlTiposServico+codigo)
+    .map((res: Response) => res.json())
+    .catch((erro:any) => Observable.throw(erro));
   }
 
-  getTipoServicoPorCodigo(codigo: number) {
-    return (this.tiposServico.find(servico => servico.codigo == codigo));
+  adicionarTipoServico(tipoServico: TipoServico): Observable<TipoServico> {
+    tipoServico.codigo = this.autoIncrement++;
+    return this.http.post(this.urlTiposServico, tipoServico)
+    .map((res:Response) => {} )
+    .catch((erro:any) => Observable.throw(erro));
   }
 
-  adicionarTipoServico(servico: TipoServico) {
-    servico.codigo = this.autoIncrement++;
-    this.tiposServico.push(servico);  
-  }
+  removerTipoServico(tipoServico: TipoServico): Observable<TipoServico> {
+    return this.http.delete(this.urlTiposServico+tipoServico.codigo)
+    .map((res:Response) => {})
+    .catch((erro:any) => Observable.throw(erro))
+  } 
 
-  removerTipoServico(servico: TipoServico) {
-    let indice = this.tiposServico.indexOf(servico, 0);
-    if (indice >- 1) {
-      this.tiposServico.splice(indice, 1);
-    }
-  }
-
-  atualizarTipoServico(codigo: number, servico: TipoServico){
-    let indice = this.tiposServico.indexOf(this.getTipoServicoPorCodigo(codigo), 0);
-    this.tiposServico[indice] = servico;
+  atualizaTipoServico(codigo:number, tipoServico: TipoServico): Observable<TipoServico> {
+    return this.http.put(this.urlTiposServico+codigo, tipoServico)
+    .map((res:Response) => {})
+    .catch((erro:any) => Observable.throw(erro))
   }
 }

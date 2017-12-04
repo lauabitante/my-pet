@@ -26,18 +26,26 @@ export class FormTipoServicoComponent implements OnInit {
     if (isNaN(this.codigo)) {
       this.tipoServico = new TipoServico();
     } else {
-      this.tipoServico = Object.assign({},this.service.getTipoServicoPorCodigo(this.codigo));
+      this.service.getTipoServicoPorCodigo(this.codigo).subscribe(tipoServico => {
+        this.tipoServico = tipoServico;
+      });
     }
   }
 
   salvarTipoServico() { 
       if (isNaN(this.codigo) && this.validaCampos()) {
-      this.service.adicionarTipoServico(this.tipoServico);
-      this.tipoServico = new TipoServico();
-      this.router.navigate(['/lista-tipos-servico']);
+        this.service.adicionarTipoServico(this.tipoServico).subscribe(
+          res => { 
+            this.router.navigate(['/lista-tipos-servico']);  
+          },
+        erro => { console.log(erro) }
+      );      
     } else if (this.validaCampos()) {
-      this.service.atualizarTipoServico(this.codigo, this.tipoServico);
-      this.router.navigate(['/lista-tipos-servico']);
+      this.service.atualizaTipoServico(this.tipoServico.codigo, this.tipoServico).subscribe(
+        res => { 
+          this.router.navigate(['/lista-tipos-servico']);     
+        },
+      erro => { console.log(erro) })  
     } else {
       this.hasError = true;
     }
