@@ -13,11 +13,19 @@ export class TabelaServicosComponent implements OnInit {
   constructor(private service: CrudServicosService, private router:Router) { }
 
   ngOnInit() {
-      this.servicos = this.service.getServicos();
+    this.service.getServicos().subscribe(
+      servicos => { this.servicos = servicos; },
+      erro => { console.log(erro); }
+    )
   }
 
   remover(servico: Servico) {
-    this.service.removerServico(servico);
+    this.service.removerServico(servico).subscribe (
+      result => { 
+        // Atualizar a tela
+       },
+      erro => { console.log(erro); }
+    )
   }
 
   voltar() {

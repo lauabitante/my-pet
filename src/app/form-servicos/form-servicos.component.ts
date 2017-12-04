@@ -35,18 +35,27 @@ export class FormServicosComponent implements OnInit {
       if (isNaN(this.codigo)) {
         this.servico = new Servico();
       } else {
-        this.servico = Object.assign({},this.service.getServicoPorCodigo(this.codigo));
+        this.service.getServicoPorCodigo(this.codigo).subscribe(servico => {
+          this.servico = servico;
+    });
       } 
   }
   
   salvarServico() { 
       if (isNaN(this.codigo) && this.validaCampos()) {
-      this.service.adicionarServico(this.servico);
-      this.servico = new Servico();
-      this.router.navigate(['/tela-cliente']);      
+        this.service.adicionarServico(this.servico).subscribe(
+          res => { 
+            this.router.navigate(['/tela-cliente']);  
+          },
+          erro => { console.log(erro) }
+    );      
     } else if (this.validaCampos()) {
-      this.service.atualizaServico(this.codigo, this.servico);
-      this.router.navigate(['/tela-cliente']);      
+      this.service.atualizaServico(this.servico.codigo, this.servico).subscribe(
+        res => { 
+          this.router.navigate(['/tela-cliente']);     
+        },
+        erro => { console.log(erro) }
+  )  
     } else {
       this.hasError = true;
     }
