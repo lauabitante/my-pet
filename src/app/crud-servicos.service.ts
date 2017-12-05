@@ -6,7 +6,7 @@ import {TipoServico } from './tipo-servico';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-import { Observable } from 'rxjs/RX';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class CrudServicosService {

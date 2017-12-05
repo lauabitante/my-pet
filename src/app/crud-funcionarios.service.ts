@@ -4,7 +4,7 @@ import { Funcionario } from './funcionario';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-import { Observable } from 'rxjs/RX';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class CrudFuncionariosService {
