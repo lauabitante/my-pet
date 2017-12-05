@@ -10,7 +10,7 @@ import { Observable } from 'rxjs/Observable';
 export class CrudTiposServicoService {
   tiposServico: TipoServico[] = [];  
 
-  urlTiposServico = 'https://mypet-backend.herokuapp.com/webresources/lista-tipos-servico/'; //verificar endpoint
+  urlTiposServico = 'https://mypet-backend.herokuapp.com/webresources/tipoServicos/'; //verificar endpoint
   
   autoIncrement: number = 1;
 

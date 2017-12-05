@@ -1,3 +1,4 @@
+import { CrudClientesService } from './../crud-clientes.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Servico } from '../servico';
@@ -6,6 +7,7 @@ import { CrudFuncionariosService } from '../crud-funcionarios.service';
 import { CrudTiposServicoService } from '../crud-tipo-servicos.service';
 import { Funcionario } from '../funcionario';
 import { TipoServico } from '../tipo-servico';
+import { Cliente } from '../cliente';
 
 @Component ({
   selector: 'app-form-servicos',
@@ -25,6 +27,7 @@ export class FormServicosComponent implements OnInit {
     private service: CrudServicosService,
     private serviceFuncionario: CrudFuncionariosService,
     private serviceTiposServico: CrudTiposServicoService, 
+    private serviceCliente: CrudClientesService, 
     private router: Router,
     private rota: ActivatedRoute 
   ) { }
@@ -43,12 +46,19 @@ export class FormServicosComponent implements OnInit {
   
   salvarServico() { 
       if (isNaN(this.codigo) && this.validaCampos()) {
-        this.service.adicionarServico(this.servico).subscribe(
-          res => { 
-            this.router.navigate(['/tela-cliente']);  
-          },
-          erro => { console.log(erro) }
-    );      
+        alert(this.servico.cpfCliente);
+        this.serviceCliente.getClientePorCodigo(parseInt(this.servico.cpfCliente)).subscribe(
+          cliente => { 
+
+            this.servico.cliente = cliente;
+            this.service.adicionarServico(this.servico).subscribe(
+              res => { 
+                this.router.navigate(['/tela-cliente']);  
+              },
+              erro => { console.log(erro) }
+          );
+          }
+        )      
     } else if (this.validaCampos()) {
       this.service.atualizaServico(this.servico.codigo, this.servico).subscribe(
         res => { 
@@ -65,12 +75,19 @@ export class FormServicosComponent implements OnInit {
       this.servico = new Servico();
       this.servico.funcionario = new Funcionario();
       this.servico.tipoServico = new TipoServico();
+      this.servico.cliente = new Cliente();
       this.serviceFuncionario.getFuncionarios().subscribe(
-        funcionarios => { this.funcionarios = funcionarios; },
+        funcionarios => { 
+          this.funcionarios = funcionarios; 
+          this.servico.funcionario = funcionarios[0]
+      },
         erro => { console.log(erro); }
       )
       this.serviceTiposServico.getTipoServico().subscribe(
-        ts => { this.tipoServicos = ts; },
+        ts => { 
+          this.tipoServicos = ts; 
+          this.servico.tipoServico = ts[0]
+        },
         erro => { console.log(erro); }
       )
   }
