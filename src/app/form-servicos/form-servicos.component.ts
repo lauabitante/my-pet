@@ -69,7 +69,7 @@ export class FormServicosComponent implements OnInit {
         funcionarios => { this.funcionarios = funcionarios; },
         erro => { console.log(erro); }
       )
-      this.tipoServicos = this.serviceTiposServico.getTiposServico();
+      this.tipoServicos = this.serviceTiposServico.getTipoServico();
   }
 
   atualizaValor(valor: number) {
